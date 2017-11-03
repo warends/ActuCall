@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 
 const paths = {
 	//js: ['js/modules/*.js', 'js/*.js'],
-	css: [path + '/sass/**/*.scss'],
+	css: [path + '/sass/*.scss'],
 	//img: ['img/*.svg', 'img/*.png', 'img/*.jpg'],
 	vendor: ['vendor/jquery.history.js',
 			'vendor/jquery.js',
@@ -18,7 +18,7 @@ const paths = {
 }
 
 gulp.task('sass', function() {
-  return gulp.src(path + '/sass/styles.scss')
+  return gulp.src(path + '/sass/style.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(path));
 });
