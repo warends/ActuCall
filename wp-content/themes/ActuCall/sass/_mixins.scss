@@ -1,0 +1,82 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+
+@mixin mq($media-query) {
+  @media ($media-query) { @content; }
+}
+
+@mixin for-IE-only {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     @content;
+   }
+}
+
+@mixin for-IE-Edge {
+    @supports (-ms-accelerator:true) {
+        /* IE Edge 12+ CSS styles go here */
+        @content;
+    }
+}
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+@mixin vertical-align(){
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+@mixin horz-align(){
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+@mixin align-all(){
+	position: relative;
+	top: 50%;
+    left: 50%;
+	transform: translate(-50%);
+}
+
+@mixin respond-to($name) {
+    @if $name == "IE" {
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            @content;
+        }
+    }
+    @if $name == "Edge" {
+        @supports (-ms-ime-align:auto) {
+            @content;
+        }
+    }
+    @if $name == "mobile" {
+        @media all and (max-width: 599px) {
+            @content;
+        }
+    }
+}

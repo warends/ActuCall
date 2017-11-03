@@ -1,0 +1,21 @@
+
+$roboto: 'Roboto', sans-serif;
+$bebas: 'Bebas Regular', "Roboto", arial , sans-serif;
+$bebas-bold: 'Bebas Bold', "Roboto", arial, sans-serif;
+
+
+$breakpoint-xs: 550px;
+$breakpoint-s: 768px;
+$breakpoint-m: 992px;
+$breakpoint-l: 1200px;
+
+$XS: 'min-width:'+ $breakpoint-xs;
+$S: 'min-width:'+ $breakpoint-s;
+$M: 'min-width:'+ $breakpoint-m;
+$L: 'min-width:'+ $breakpoint-l;
+
+
+$blue: #003e8e;
+$green: #35b729;
+$grey: #EBEBEB;
+$dark-grey: #747474
