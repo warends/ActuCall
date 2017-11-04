@@ -17,8 +17,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="/wp-content/themes/ActuCall/style.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+<!-- <link href="/wp-content/themes/ActuCall/style.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <?php wp_head(); ?>
 </head>
@@ -31,17 +31,34 @@
 
 				<nav class="container">
 				  <div class="row">
-					  <div class="col">
-						  <a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"></a>
+
 						  <?php
 							wp_nav_menu(array (
-										'theme_location'=> 'menu-1',
-										'menu_id' 		=> 'primary',
+										'theme_location'=> 'menu-left',
+										'menu_id' 		=> 'menu-left',
 										'depth'         =>  2,
-										'container'     =>  'div'
+										'container'     =>  'ul',
+										'menu_class'	=> 'col-4 list-unstyled'
 									));
 					  		?>
-					  </div>
+							<div class="col-2 logo-left margin-vert">
+								<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"></a>
+								<h4 class="green">Elevated<br />Foresight</h4>
+								<h6>Communications<br />Intelligence<br />Solutions</h6>
+							</div>
+							<div class="col-2 margin-vert">
+								<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo"></a>
+							</div>
+						  <?php
+							wp_nav_menu(array (
+										'theme_location'=> 'menu-right',
+										'menu_id' 		=> 'menu-right',
+										'depth'         =>  2,
+										'container'     =>  'ul',
+										'menu_class'	=> 'col-4 list-unstyled'
+
+									));
+					  		?>
 					</div>
 			</nav>
 	</header><!-- #masthead -->

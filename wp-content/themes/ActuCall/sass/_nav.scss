@@ -1,13 +1,28 @@
-.nav-logo{
-    float: left;
-}
-#primary{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li{
+// .nav-logo{
+//     float: left;
+// }
+#menu-left, #menu-right{
+    height: 132px;
+    li {
+        @include vertical-align;
         display: inline-block;
         padding: 5px 14px;
+        a{
+            font-family: $bebas-bold;
+            color: $blue;
+            text-decoration: none;
+            font-size: 22px;
+        }
     }
 
+}
+.logo-left{
+    border-right: 1px solid black;
+    h4{
+        font-size: 20px;
+    }
+}
+.nav-logo{
+    float: left;
+    height: 100px;
 }

@@ -3,28 +3,43 @@
 
 @font-face {
   font-family: 'Bebas Regular';
-  src: url('./fonts/bebas-reg/bebaseneue_regular.woff2') format('woff2'),
-      url('./fonts/bebas-reg/bebaseneue_regular.woff') format('woff'),
-      url('./fonts/bebas-reg/bebaseneue_regular.ttf') format('truetype');
+  src: url('./sass/fonts/bebas-reg/bebasneue_regular.woff2') format('woff2'),
+      url('./sass/fonts/bebas-reg/bebasneue_regular.woff') format('woff'),
+      url('./sass/fonts/bebas-reg/bebasneue_regular.ttf') format('truetype');
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Bebas Bold';
-  src: url('./fonts/bebas-reg/bebaseneue_bold.woff2') format('woff2'),
-      url('./fonts/bebas-reg/bebaseneue_bold.woff') format('woff'),
-      url('./fonts/bebas-reg/bebaseneue_regular.ttf') format('truetype');
+  src: url('./sass/fonts/bebas-bold/bebasneue_bold.woff2') format('woff2'),
+      url('./sass/fonts/bebas-bold/bebasneue_bold.woff') format('woff'),
+      url('./sass/fonts/bebas-bold/bebasneue_regular.ttf') format('truetype');
   font-style: normal;
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: $bebas-bold;
     font-weight: normal;
     line-height: 1.3;
+    margin: 0;
 }
-h4, h5, h6{
+h3, h4, h5, h6{
     font-family: $bebas;
     line-height: 1.3;
+    margin: 0;
+}
+h1{
+    font-size: 72px;
+}
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 36px;
+
+}
+h4{
+    font-size: 30px;
 }
 p, a, button, input {
     font-family: $roboto;

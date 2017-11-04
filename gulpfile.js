@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 
 const paths = {
 	//js: ['js/modules/*.js', 'js/*.js'],
-	css: [path + '/sass/*.scss'],
+	css: [path + '/sass/**/*.scss'],
 	//img: ['img/*.svg', 'img/*.png', 'img/*.jpg'],
 	vendor: ['vendor/jquery.history.js',
 			'vendor/jquery.js',
