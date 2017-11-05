@@ -958,6 +958,9 @@ h3 {
 h4 {
   font-size: 30px; }
 
+h5 {
+  font-size: 26px; }
+
 p, a, button, input {
   font-family: "Roboto", sans-serif; }
 
@@ -1509,3 +1512,74 @@ html, body {
   width: auto;
   z-index: -1;
   top: 0; }
+
+#capabilities {
+  height: 800px;
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 0;
+  margin-right: 0; }
+  #capabilities .title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.clip-svg {
+  width: 0;
+  height: 0; }
+
+.cap {
+  background: rgba(0, 0, 0, 0.6);
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  -webkit-clip-path: url("#hexagon-clip");
+  clip-path: url("#hexagon-clip");
+  margin: 0 auto;
+  color: #fff;
+  left: 3%; }
+  .cap:nth-child(2) {
+    left: 19%;
+    top: 15%; }
+  .cap:nth-child(3) {
+    left: 35%;
+    top: 30%; }
+  .cap:nth-child(4) {
+    top: 30%; }
+  .cap:nth-child(5) {
+    left: 19%;
+    top: 45%; }
+  .cap:nth-child(6) {
+    top: 60%; }
+  .cap h5 {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 70%;
+    text-align: center; }
+  .cap .cap-icon {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    width: 75px; }
+  .cap:hover h5, .cap:hover .cap-icon {
+    transition: all 0.3s ease-in;
+    visibility: visible;
+    opacity: 1; }
+
+#mtns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1; }

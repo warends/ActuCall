@@ -10,4 +10,13 @@ $(document).ready(function(){
   bgVid.play();
   var width = window.innerWidth + 'px';
   bgVid.style.width = width;
+
+  $('.clip-each').hover(
+      function() {
+
+      }, function() {
+
+      }
+  );
+
 });

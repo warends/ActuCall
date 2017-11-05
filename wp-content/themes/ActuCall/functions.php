@@ -102,6 +102,23 @@ function will_arends_development_widgets_init() {
 }
 add_action( 'widgets_init', 'will_arends_development_widgets_init' );
 
+
+function svg_mime_types( $mimes ) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;}
+add_filter( 'upload_mimes', 'svg_mime_types' );
+
+function svg_size() {
+  echo '<style>
+    svg, img[src*=".svg"] {
+      max-width: 150px !important;
+      max-height: 150px !important;
+    }
+  </style>';
+}
+add_action('admin_head', 'svg_size');
+
+
 /**
  * Enqueue scripts and styles.
  */
