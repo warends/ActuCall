@@ -18,10 +18,16 @@ html, body{
 .green{
     color: $green;
 }
+sup{
+    top: -1.5em;
+}
 .list-unstyled {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+.text-center{
+    text-align: center;
 }
 .padded{
     padding: 1em;
@@ -84,7 +90,11 @@ html, body{
         position: relative;
         top: 8px
     }
-    h4{
-        padding-left: 1em;
+    h4, h1{
+        padding-left: 30px;
     }
+    h1{
+        line-height: 1;
+    }
+
 }

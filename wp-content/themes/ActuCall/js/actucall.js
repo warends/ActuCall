@@ -11,11 +11,13 @@ $(document).ready(function(){
   var width = window.innerWidth + 'px';
   bgVid.style.width = width;
 
-  $('.clip-each').hover(
+  $('.cap').hover(
       function() {
-
+          var slug = $(this).attr('id');
+          $('.' + slug).addClass('active');
       }, function() {
-
+          var slug = $(this).attr('id');
+          $('.' + slug).removeClass('active');
       }
   );
 
