@@ -4,6 +4,9 @@
 html, body{
     font-size: 16px;
 }
+.content{
+    position: relative;
+}
 .img-responsive{
     max-width: 100%;
     height: auto;
@@ -76,8 +79,13 @@ sup{
     border: 4px solid $green;
     border-radius: 4px;
     text-decoration: none;
-    font-family: $bebas-bold;
-    font-size: 22px;
+    font-family: $bebas;
+    font-size: 24px;
+    transition: all .3s ease-in;
+    &:hover{
+        color: white;
+        background-color: $green;
+    }
 }
 .green-subhead{
     &:before{
@@ -96,5 +104,14 @@ sup{
     h1{
         line-height: 1;
     }
-
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }

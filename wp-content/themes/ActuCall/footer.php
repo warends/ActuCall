@@ -13,14 +13,15 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer padded-vert2x container" role="contentinfo">
-		<div class="site-info row">
+	<footer id="colophon" class="site-footer container" role="contentinfo">
+		<!-- <div class="site-info row">
 			<div class="col">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'will-arends-development' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'will-arends-development' ), 'WordPress' ); ?></a>
-				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'will-arends-development' ), 'will-arends-development', '<a href="https://automattic.com/" rel="designer">Will Arends</a>' ); ?>
+				<ul class="list-unstyled">
+					<li><a href="/demo">Contact</a></li>
+					<li><a href="/contact">Demo</a></li>
+				</ul>
 			</div>
-		</div><!-- .site-info -->
+		</div>-->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

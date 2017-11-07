@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    console.log('connected');
+
   $('.slider').slick({
     dots: true,
     prevArrow: '<i class="fa fa-arrow-left white arrow-prev" aria-hidden="true"></i>',

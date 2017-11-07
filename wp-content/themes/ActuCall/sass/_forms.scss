@@ -1,1 +1,56 @@
+#Contact{
+    height: 100%;
+    // background-color: $blue;
 
+}
+.wpcf7-form{
+    background: url('assets/img/letter_2.svg') no-repeat center center;
+    background-size: contain;
+    height: 700px;
+    .col-10{
+        padding: 100px;
+    }
+
+    p{
+        line-height: 2;
+    }
+    select{
+        line-height: 2.2;
+        max-width: 350px;
+        width: 350px;
+        background-image: url('assets/icons/chevron-down.svg');
+        background-repeat: no-repeat;
+        background-size: 20px 9px;
+        background-position: 100% 50%;
+        padding-right: 20px;
+        background-color: white;
+        border: none;
+        text-align: center;
+        border-bottom: 2px solid $blue;
+        padding: 0 .25em;
+        margin: 0 .25em;
+        border-radius: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        text-transform: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    textarea{
+        width: 100%;
+        border: 2px solid $blue;
+    }
+    input[type="text"], input[type="email"]{
+        display: inline-block;
+        padding: 10px;
+        border: none;
+        width: 225px;
+        border-bottom: 2px solid $blue;
+    }
+    .btn-green{
+        position: relative;
+        bottom: 50px;
+        right: 150px;
+    }
+}

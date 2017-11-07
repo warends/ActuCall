@@ -1,0 +1,43 @@
+
+    <div class="row">
+        <div class="col">
+            <label for="firstName">First Name:</label>
+            [text* firstName id:firstName placeholder "First Name"]
+        </div>
+        <div class="col">
+            <label for="lastName">Last Name:</label>
+            [text* lastName id:lastName placeholder "Last Name"]
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="sr-only" for="email">Email:</label>
+            [email* email id:email placeholder "Email"]
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="email">Subject:</label>
+            [text* subject id:subject placeholder "Subject"]
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="message">Message:</label>
+            [textarea* message id:message placeholder "Message"]
+        </div>
+    </div>
+    [submit class:btn-green class:pull-right "Submit"]
+
+
+
+
+    <p>I'm interested in learning more about Elevated's [select interest "learning about products and services" "how I can increase revenues" "how I can identify organizational savings" "I'm not quite sure yet but want to chat"] .    I'm [text* firstName id:firstName placeholder "First Name"] with [text* company id:company placeholder "Organization"] and can be reached at [text* phone id:phone placeholder "Phone Number"] and/or [email* email id:email placeholder "Email"].  I'd also like you to know:</p>
+
+    [textarea* message id:message placeholder "Message"]
+
+
+
+(drop down menu here with options: learning about products and services; how I can increase revenues; how I can identify organizational savings; I'm not quite sure yet but want to chat).
+
+I'm (insert name) with (organization) and can be reached at (phone number) and/or (email).  I'd also like you to know: (open form box).

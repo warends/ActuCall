@@ -7,6 +7,7 @@ $about_text = get_field('about_text');
 $actucall_slogan = get_field('actucall_slogan');
 $actucall_solution = get_field('actucall_solution');
 $actucall_movie = get_field('actucall_movie');
+$actucall_poster = get_field('actucall_poster');
 
 get_header(); ?>
 
@@ -32,6 +33,7 @@ get_header(); ?>
 							$button_2_copy = get_field('button_2_copy');
 							$is_video = get_field('is_video');
                     		$video_file = get_field('video_file');
+							$right_align = get_field('right_align');
                 		?>
 
 						<?php if($is_video){ //check for video ?>
@@ -50,8 +52,13 @@ get_header(); ?>
 						<?php  } else { //background image ?>
 							<div style="background-image: url(<?php echo $banner_image['url']; ?>);">
 								<div class="container">
-									<h1 class="white padded-top"><?php echo $banner_header ?></h1>
-									<h3 class="white"><?php echo $banner_subheader ?></h3>
+									<?php if($right_align){ ?>
+										<h1 class="white padded-top pull-right"><?php echo $banner_header ?></h1>
+										<h3 class="white pull-right"><?php echo $banner_subheader ?></h3>
+									<?php  } else { ?>
+										<h1 class="white padded-top"><?php echo $banner_header ?></h1>
+										<h3 class="white"><?php echo $banner_subheader ?></h3>
+									<?php } ?>
 									<a class="btn-green btn-left" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
 									<a class="btn-green btn-right" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
 								</div>
@@ -308,8 +315,8 @@ get_header(); ?>
 			</section>
 
 			<section class="icon-map container">
-					<div class="row padded-vert2x justify-content-center">
-						<div class="col-10">
+					<div class="row padded-vert2x">
+						<div class="col-8">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 863.97 575.68">
 							  <defs>
 								<radialGradient id="radial-gradient" cx="1401.97" cy="-11536.58" r="48.9" gradientTransform="translate(-1453.29 3101.6) scale(1.47 0.26)" gradientUnits="userSpaceOnUse">
@@ -557,12 +564,15 @@ get_header(); ?>
 							</svg>
 
 						</div>
+						<div class="col-4">
+							<h3 class="margin-top2x"><?php echo $actucall_solution ?></h3>
+						</div>
 					</div>
-					<div class="row padded-bottom2x">
+					<!-- <div class="row padded-bottom2x">
 						<div class="col">
 							<h3 class="text-center"><?php echo $actucall_solution ?></h3>
 						</div>
-					</div>
+					</div> -->
 			</section>
 
 			<section id="video" class="padded-vert2x">
@@ -577,7 +587,7 @@ get_header(); ?>
 					</div>
 					<div class="row padded-top justify-content-center">
 						<div class="col-10">
-							<video controls>
+							<video controls poster="<?php echo $actucall_poster['url']; ?>">
 							  <source src="<?php echo $actucall_movie['url']; ?>" type="video/mp4">
 							  Your browser does not support HTML5 video.
 							</video>
