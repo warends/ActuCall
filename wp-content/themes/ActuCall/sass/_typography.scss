@@ -29,20 +29,33 @@ h3, h4, h5, h6{
     margin: 0;
 }
 h1{
-    font-size: 72px;
+    font-size: 48px;
+    @include mq($M){
+        font-size: 72px;
+    }
 }
 h2{
     font-size: 36px;
 }
 h3{
-    font-size: 36px;
+    font-size: 26px;
+    @include mq($M){
+        font-size: 36px;
+    }
 
 }
 h4{
-    font-size: 30px;
+    font-size: 22px;
+    @include mq($M){
+        font-size: 30px;
+    }
+
 }
 h5{
-    font-size: 26px;
+    font-size: 20px;
+    @include mq($M){
+        font-size: 26px;
+    }
 }
 h6{
     font-size: 22px;

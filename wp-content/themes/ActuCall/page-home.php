@@ -42,7 +42,7 @@ get_header(); ?>
 									<source src="<?php echo $video_file['url']; ?>" type="video/mp4">
 								</video>
 								<div class="container">
-									<h1 class="white padded-top"><?php echo $banner_header ?></h1>
+									<h1 class="white"><?php echo $banner_header ?></h1>
 									<h3 class="white"><?php echo $banner_subheader ?></h3>
 									<a class="btn-green btn-left" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
 									<a class="btn-green btn-right" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
@@ -53,7 +53,7 @@ get_header(); ?>
 							<div style="background-image: url(<?php echo $banner_image['url']; ?>);">
 								<div class="container">
 									<?php if($right_align){ ?>
-										<h1 class="white padded-top pull-right"><?php echo $banner_header ?></h1>
+										<h1 class="white pull-right"><?php echo $banner_header ?></h1>
 										<h3 class="white pull-right"><?php echo $banner_subheader ?></h3>
 									<?php  } else { ?>
 										<h1 class="white padded-top"><?php echo $banner_header ?></h1>
@@ -316,7 +316,7 @@ get_header(); ?>
 
 			<section class="icon-map container">
 					<div class="row padded-vert2x">
-						<div class="col-8">
+						<div class="col-md-8">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 863.97 575.68">
 							  <defs>
 								<radialGradient id="radial-gradient" cx="1401.97" cy="-11536.58" r="48.9" gradientTransform="translate(-1453.29 3101.6) scale(1.47 0.26)" gradientUnits="userSpaceOnUse">
@@ -564,15 +564,10 @@ get_header(); ?>
 							</svg>
 
 						</div>
-						<div class="col-4">
+						<div class="col-md-4">
 							<h3 class="margin-top2x"><?php echo $actucall_solution ?></h3>
 						</div>
 					</div>
-					<!-- <div class="row padded-bottom2x">
-						<div class="col">
-							<h3 class="text-center"><?php echo $actucall_solution ?></h3>
-						</div>
-					</div> -->
 			</section>
 
 			<section id="video" class="padded-vert2x">

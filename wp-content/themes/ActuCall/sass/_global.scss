@@ -73,7 +73,7 @@ sup{
     margin-bottom: 2em;
 }
 .btn-green{
-    padding: 15px 30px;
+    padding: 8px 20px;
     background-color: white;
     color: $green;
     border: 4px solid $green;
@@ -85,6 +85,9 @@ sup{
     &:hover{
         color: white;
         background-color: $green;
+    }
+    @include mq($M){
+        padding: 15px 30px;
     }
 }
 .green-subhead{

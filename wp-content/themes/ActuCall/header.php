@@ -46,7 +46,7 @@
 								<h4 class="green">Elevated<br />Foresight</h4>
 								<h6>Communications<br />Intelligence<br />Solutions</h6>
 							</div>
-							<div class="col-2 margin-vert">
+							<div class="col-2 margin-vert logo-right hidden-sm-down">
 								<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo"></a>
 							</div>
 						  <?php
