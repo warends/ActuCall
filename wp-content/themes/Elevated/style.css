@@ -1174,6 +1174,9 @@ sup {
 .margin-top2x {
   margin-top: 2em; }
 
+.margin-top {
+  margin-top: 1em; }
+
 .margin-bottom2x {
   margin-bottom: 2em; }
 
@@ -1182,7 +1185,7 @@ sup {
   background-color: white;
   color: #35b729;
   border: 4px solid #35b729;
-  border-radius: 4px;
+  border-radius: 0px;
   text-decoration: none;
   font-family: "Bebas Regular", "Roboto", arial, sans-serif;
   font-size: 24px;
@@ -1190,9 +1193,6 @@ sup {
   .btn-green:hover {
     color: white;
     background-color: #35b729; }
-  @media (min-width: 992px) {
-    .btn-green {
-      padding: 15px 30px; } }
 
 .green-subhead:before {
   float: left;
@@ -1220,23 +1220,79 @@ sup {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
-nav {
-  height: 145px; }
+footer .col-md-4 {
+  height: 70px;
+  text-align: left;
+  position: relative; }
   @media (min-width: 992px) {
-    nav {
-      height: auto; } }
-
-#menu-left, #menu-right {
-  height: 60px; }
-  @media (min-width: 992px) {
-    #menu-left, #menu-right {
-      height: 132px; } }
-  #menu-left li, #menu-right li {
+    footer .col-md-4 {
+      height: 90px; } }
+  footer .col-md-4 a, footer .col-md-4 p {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    position: absolute;
+    margin: 0; }
+
+nav {
+  height: auto;
+  overflow: hidden; }
+  nav .menu-row {
+    position: relative;
+    top: 0; }
+    nav .menu-row.hide {
+      position: absolute;
+      top: -200px;
+      transition: all 1s linear; }
+  nav img {
+    max-width: 100%; }
+  nav h4.green {
+    padding-bottom: 10px; }
+
+#menu-btn {
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  text-decoration: none;
+  font-size: 14px;
+  width: 50px;
+  height: 50px;
+  top: 25px;
+  right: 30px;
+  z-index: 9999;
+  transition: 0.5s all linear; }
+  @media (min-width: 992px) {
+    #menu-btn {
+      opacity: 0;
+      visibility: hidden; } }
+  #menu-btn img {
+    height: 50px; }
+  #menu-btn p {
+    font-family: "Bebas Bold", "Roboto", arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding-left: 10px; }
+  #menu-btn .icon-bar {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    background: #35b729;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out; }
+  #menu-btn.active {
+    opacity: 1;
+    visibility: visible; }
+
+#menu-left, #menu-right {
+  position: fixed;
+  transition: 1s all linear;
+  height: auto;
+  z-index: 999; }
+  #menu-left li, #menu-right li {
     display: inline-block;
-    padding: 5px 14px; }
+    padding: 8px 14px; }
     #menu-left li a, #menu-right li a {
       font-family: "Bebas Bold", "Roboto", arial, sans-serif;
       color: #003e8e;
@@ -1244,17 +1300,24 @@ nav {
       font-size: 22px; }
 
 #menu-left {
-  padding-right: 2em;
-  text-align: left; }
-  @media (min-width: 992px) {
-    #menu-left {
-      text-align: right; } }
+  text-align: right;
+  right: 66.666%;
+  transition: 1s all linear; }
+  #menu-left.hide {
+    right: -2000px; }
+  #menu-left.active {
+    background-color: white;
+    right: 33.333%; }
 
 #menu-right {
-  text-align: right; }
-  @media (min-width: 992px) {
-    #menu-right {
-      text-align: left; } }
+  right: calc(33.333% - 289px);
+  text-align: right;
+  transition: 0.5s right linear; }
+  #menu-right.hide {
+    right: -1000px; }
+  #menu-right.active {
+    background-color: white;
+    right: calc(33.333% - 289px); }
 
 .logo-right {
   display: none; }
@@ -1262,33 +1325,12 @@ nav {
     .logo-right {
       display: flex; } }
 
-.logo-left {
-  flex: 0 0 33.333333%;
-  max-width: 33.33333%; }
-  @media (min-width: 992px) {
-    .logo-left {
-      flex: 0 0 16.66667%;
-      max-width: 16.66667%;
-      border-right: 1px solid black; } }
-  .logo-left h4 {
-    font-size: 20px;
-    display: none; }
-    @media (min-width: 992px) {
-      .logo-left h4 {
-        display: block; } }
-  .logo-left h6 {
-    font-size: 12px;
-    display: none; }
-    @media (min-width: 992px) {
-      .logo-left h6 {
-        display: block; } }
+@media (min-width: 992px) {
+  .logo-left {
+    border-right: 1px solid black; } }
 
 .nav-logo {
-  float: left;
-  height: 90px; }
-  @media (min-width: 992px) {
-    .nav-logo {
-      height: 100px; } }
+  height: 65px; }
 
 /* Slider */
 .slick-slider {
@@ -1496,20 +1538,22 @@ nav {
       opacity: 0.75; }
 
 #Contact {
-  height: 100%; }
-
-.wpcf7-form {
-  background: url("assets/img/letter_2.svg") no-repeat center center;
-  background-size: contain;
-  height: 700px; }
-  .wpcf7-form .col-10 {
-    padding: 100px; }
-  .wpcf7-form p {
-    line-height: 2; }
-  .wpcf7-form select {
+  height: 100%;
+  background-color: #003e8e; }
+  #Contact h1 {
+    color: white; }
+  #Contact p {
+    color: white; }
+  #Contact .wpcf7-form .form-container {
+    background-color: white; }
+  #Contact .wpcf7-form p {
+    color: black;
+    line-height: 2;
+    padding: 0 1em; }
+  #Contact .wpcf7-form select {
     line-height: 2.2;
-    max-width: 350px;
-    width: 350px;
+    max-width: 215px;
+    width: 215px;
     background-image: url("assets/icons/chevron-down.svg");
     background-repeat: no-repeat;
     background-size: 20px 9px;
@@ -1524,22 +1568,28 @@ nav {
     border-radius: 0;
     -webkit-appearance: none;
     appearance: none;
-    text-transform: none; }
-    .wpcf7-form select:focus {
+    text-transform: none;
+    color: #003e8e;
+    font-size: 18px; }
+    #Contact .wpcf7-form select:focus {
       outline: 0; }
-  .wpcf7-form textarea {
+  #Contact .wpcf7-form textarea {
     width: 100%;
     border: 2px solid #003e8e; }
-  .wpcf7-form input[type="text"], .wpcf7-form input[type="email"] {
+  #Contact .wpcf7-form input[type="text"], #Contact .wpcf7-form input[type="email"] {
     display: inline-block;
     padding: 10px;
     border: none;
-    width: 225px;
+    width: 140px;
+    color: #003e8e;
+    font-size: 18px;
     border-bottom: 2px solid #003e8e; }
-  .wpcf7-form .btn-green {
+    @media (min-width: 992px) {
+      #Contact .wpcf7-form input[type="text"], #Contact .wpcf7-form input[type="email"] {
+        width: 225px; } }
+  #Contact .wpcf7-form .btn-green {
     position: relative;
-    bottom: 50px;
-    right: 150px; }
+    margin-top: 1em; }
 
 .main-navigation {
   clear: both;
@@ -1674,6 +1724,24 @@ nav {
     left: 50%;
     transform: translateX(-50%); }
 
+#line-1 {
+  position: absolute;
+  top: 30%;
+  top: 145px;
+  width: 500px;
+  left: 30%;
+  z-index: 1; }
+
+.line-1 {
+  stroke-dasharray: 850;
+  stroke-dashoffset: 850; }
+  .line-1.active {
+    animation: draw 1s linear alternate infinite; }
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; } }
+
 .clip-svg {
   width: 0;
   height: 0; }
@@ -1692,7 +1760,8 @@ nav {
   clip-path: url("#hexagon-clip");
   margin: 0 auto;
   color: #fff;
-  left: 15px; }
+  left: 15px;
+  z-index: 9; }
   .cap#real-time {
     top: 10%; }
   .cap#solutions {
@@ -1709,21 +1778,23 @@ nav {
   .cap#benchmarking {
     top: 61%; }
   .cap h5, .cap .cap-icon {
-    visibility: hidden;
-    opacity: 0;
     position: absolute;
     left: 50%;
     transform: translateX(-50%); }
   .cap h5 {
-    top: 50%;
+    top: 35%;
     width: 70%;
     text-align: center; }
   .cap .cap-icon {
+    visibility: hidden;
+    opacity: 0;
     top: 15%;
     width: 70px; }
   .cap:hover {
     background: #35b729 !important;
     transition: all 0.3s ease-in; }
+    .cap:hover h5 {
+      top: 50%; }
     .cap:hover h5, .cap:hover .cap-icon {
       transition: all 0.3s ease-in;
       visibility: visible;
@@ -1781,6 +1852,20 @@ nav {
 #video {
   background-color: #003e8e;
   height: 500px; }
+  #video .chat-bubble {
+    z-index: 9;
+    height: 100px;
+    width: 100px;
+    background: url("assets/img/chat-bubble.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 14px;
+    text-transform: uppercase; }
   @media (min-width: 992px) {
     #video {
       height: 100%; } }

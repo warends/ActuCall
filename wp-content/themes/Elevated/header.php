@@ -30,36 +30,45 @@
 	<header id="masthead" class="site-header" role="banner">
 
 				<nav class="container">
-				  <div class="row">
-
+				  <div class="row menu-row align-items-center">
+					  <div class="col-4">
 						  <?php
 							wp_nav_menu(array (
 										'theme_location'=> 'menu-left',
 										'menu_id' 		=> 'menu-left',
 										'depth'         =>  2,
 										'container'     =>  'ul',
-										'menu_class'	=> 'col-4 list-unstyled'
+										'menu_class'	=> 'list-unstyled'
 									));
 					  		?>
-							<div class="col-2 logo-left margin-vert">
-								<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"></a>
-								<h4 class="green">Elevated<br />Foresight</h4>
-								<h6>Communications<br />Intelligence<br />Solutions</h6>
-							</div>
-							<div class="col-2 margin-vert logo-right hidden-sm-down">
-								<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo"></a>
-							</div>
-						  <?php
-							wp_nav_menu(array (
-										'theme_location'=> 'menu-right',
-										'menu_id' 		=> 'menu-right',
-										'depth'         =>  2,
-										'container'     =>  'ul',
-										'menu_class'	=> 'col-4 list-unstyled'
+					  </div>
+						<div class="col-2 logo-left margin-top text-center">
+							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"></a>
+						</div>
+						<div class="col-2 margin-top logo-right hidden-sm-down text-center">
+							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo" class="nav-logo"></a>
+						</div>
+						<div class="col-4">
+							<?php
+								wp_nav_menu(array (
+											'theme_location'=> 'menu-right',
+											'menu_id' 		=> 'menu-right',
+											'depth'         =>  2,
+											'container'     =>  'ul',
+											'menu_class'	=> 'list-unstyled'
 
-									));
-					  		?>
+										));
+						  		?>
+						</div>
 					</div>
+					<div class="row">
+						<div class="col text-center">
+							<h4 class="green">Elevated Foresight</h4>
+						</div>
+					</div>
+					<a href="#" id="menu-btn" class="green">
+			            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"><p>MENU</p>
+			        </a>
 			</nav>
 	</header><!-- #masthead -->
 

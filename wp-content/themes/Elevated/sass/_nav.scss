@@ -1,0 +1,116 @@
+
+nav{
+    height: auto;
+    overflow: hidden;
+    .menu-row{
+        position: relative;
+        top: 0;
+        &.hide{
+            position: absolute;
+            top: -200px;
+            transition: all 1s linear;
+        }
+    }
+    img{
+        max-width: 100%;
+    }
+    h4.green{
+        padding-bottom: 10px;
+    }
+}
+#menu-btn{
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    text-decoration: none;
+    font-size: 14px;
+	width: 50px;
+	height: 50px;
+    top: 25px;
+    right: 30px;
+    z-index: 9999;
+    transition: 0.5s all linear;
+    @include mq($M){
+        opacity: 0;
+        visibility: hidden;
+    }
+    img{
+        height: 50px;
+    }
+    p{
+        font-family: $bebas-bold;
+        font-size: 16px;
+        margin: 0;
+        padding-left: 10px;
+    }
+    .icon-bar{
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 50%;
+        background: $green;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+    }
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+#menu-left, #menu-right{
+    position: fixed;
+    transition: 1s all linear;
+    height: auto;
+    z-index: 999;
+    li {
+        // @include vertical-align;
+        display: inline-block;
+        padding: 8px 14px;
+        a{
+            font-family: $bebas-bold;
+            color: $blue;
+            text-decoration: none;
+            font-size: 22px;
+        }
+    }
+
+}
+#menu-left{
+    text-align: right;
+    right: 66.666%;
+    transition: 1s all linear;
+    &.hide{
+        right: -2000px;
+    }
+    &.active{
+        background-color: white;
+        right: 33.333%;
+    }
+}
+#menu-right{
+    right: calc(33.333% - 289px);
+    text-align: right;
+    transition: 0.5s right linear;
+    &.hide{
+        right: -1000px;
+    }
+    &.active{
+        background-color: white;
+        right: calc(33.333% - 289px);
+    }
+}
+.logo-right{
+    display: none;
+    @include mq($M){
+        display: flex;
+    }
+}
+.logo-left{
+    @include mq($M){
+        border-right: 1px solid black;
+    }
+}
+.nav-logo{
+    height: 65px;
+}

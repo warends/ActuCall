@@ -118,6 +118,11 @@ get_header(); ?>
 					</defs>
 				</svg>
 
+				<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701.58 154.41">
+				  <title>line-1</title>
+				  <polyline class="line-1" points="3.19 152 115.19 4 605.19 4 698.19 152" fill="#fff" stroke="#35b829" stroke-miterlimit="10" stroke-width="8"/>
+				</svg>
+
 				<svg id="mtns" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 786.95 435.81">
 				  <defs>
 				    <clipPath id="clip-path" transform="translate(0 -13.72)">
@@ -582,6 +587,8 @@ get_header(); ?>
 					</div>
 					<div class="row padded-top justify-content-center">
 						<div class="col-10">
+							<a href="/contact" class="chat-bubble white caps">Schedule a demo today</a>
+
 							<video controls poster="<?php echo $actucall_poster['url']; ?>">
 							  <source src="<?php echo $actucall_movie['url']; ?>" type="video/mp4">
 							  Your browser does not support HTML5 video.

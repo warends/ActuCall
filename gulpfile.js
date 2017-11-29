@@ -4,7 +4,7 @@ const gulp = require('gulp'),
 	babel = require('gulp-babel'),
 	concat = require('gulp-concat'),
 	gutil = require('gulp-util');
-    path = './wp-content/themes/ActuCall';
+    path = './wp-content/themes/Elevated';
 
 const paths = {
 	js: [path + '/js/actucall.js'],

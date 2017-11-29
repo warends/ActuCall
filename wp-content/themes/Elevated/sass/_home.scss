@@ -73,6 +73,26 @@
         @include horz-align;
     }
 }
+#line-1{
+    position: absolute;
+    top: 30%;
+    top: 145px;
+    width: 500px;
+    left: 30%;
+    z-index: 1;
+}
+.line-1{
+    stroke-dasharray: 850;
+    stroke-dashoffset: 850;
+    &.active{
+        animation: draw 1s linear alternate infinite;
+    }
+}
+@keyframes draw {
+    to{
+        stroke-dashoffset: 0;
+    }
+}
 .clip-svg {
   width: 0;
   height: 0;
@@ -92,6 +112,7 @@
     margin: 0 auto;
     color: #fff;
     left: 15px;
+    z-index: 9;
         &#real-time{
             top: 10%;
         }
@@ -114,24 +135,27 @@
             top: 61%;
         }
         h5, .cap-icon{
-            visibility:hidden;
-            opacity: 0;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
         h5{
-            top: 50%;
+            top: 35%;
             width: 70%;
             text-align: center;
         }
         .cap-icon{
+            visibility:hidden;
+            opacity: 0;
             top: 15%;
             width: 70px;
         }
         &:hover{
             background: $green !important;
             transition: all 0.3s ease-in;
+            h5{
+                top: 50%;
+            }
             h5, .cap-icon{
                 transition: all 0.3s ease-in;
                 visibility: visible;
@@ -215,6 +239,21 @@
 #video{
     background-color: $blue;
     height: 500px;
+    .chat-bubble{
+        z-index: 9;
+        height: 100px;
+        width: 100px;
+        background: url('assets/img/chat-bubble.png') no-repeat center center;
+        background-size: contain;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        text-decoration: none;
+        padding-top: 20px;
+        padding-left: 5px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
     @include mq($M){
         height: 100%;
     }

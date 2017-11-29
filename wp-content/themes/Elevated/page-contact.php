@@ -10,7 +10,7 @@ get_header(); ?>
 			<section class="content" role="main">
 				<div class="container">
 					<div class="row justify-content-center">
-						<div class="col-10">
+						<div class="col-xs-12 col-md-8">
 							<h1 class="text-center"><?php the_title(); ?></h1>
 							<?php while (have_posts() ): the_post(); ?>
 
