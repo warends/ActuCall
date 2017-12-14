@@ -8,11 +8,13 @@ $breakpoint-xs: 550px;
 $breakpoint-s: 768px;
 $breakpoint-m: 992px;
 $breakpoint-l: 1200px;
+$breakpoint-xl: 1400px;
 
 $XS: 'min-width:'+ $breakpoint-xs;
 $S: 'min-width:'+ $breakpoint-s;
 $M: 'min-width:'+ $breakpoint-m;
 $L: 'min-width:'+ $breakpoint-l;
+$XL: 'min-width:'+ $breakpoint-xl;
 
 
 $blue: #003e8e;

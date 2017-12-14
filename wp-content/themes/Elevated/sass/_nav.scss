@@ -16,9 +16,23 @@ nav{
     }
     h4.green{
         padding-bottom: 10px;
+        font-size: 28px;
+        @include mq($M){
+            font-size: 22px;
+        }
+    }
+    .logo-text{
+        height: 85px;
+        h4{
+            @include vertical-align;
+        }
+        @include mq($M){
+            height: auto;
+        }
     }
 }
 #menu-btn{
+    cursor: pointer;
     opacity: 1;
     visibility: visible;
     position: fixed;
@@ -26,11 +40,13 @@ nav{
     font-size: 14px;
 	width: 50px;
 	height: 50px;
-    top: 25px;
-    right: 30px;
+    top: 10px;
+    right: 5px;
     z-index: 9999;
     transition: 0.5s all linear;
     @include mq($M){
+        top: 25px;
+        right: 30px;
         opacity: 0;
         visibility: hidden;
     }
@@ -63,10 +79,16 @@ nav{
     transition: 1s all linear;
     height: auto;
     z-index: 999;
+    width: 145px;
+    @include mq($M){
+        width: auto;
+    }
     li {
-        // @include vertical-align;
-        display: inline-block;
-        padding: 8px 14px;
+        display: block;
+        padding: 15px;
+        @include mq($M){
+            display: inline-block;
+        }
         a{
             font-family: $bebas-bold;
             color: $blue;
@@ -78,26 +100,59 @@ nav{
 }
 #menu-left{
     text-align: right;
-    right: 66.666%;
-    transition: 1s all linear;
+    right: -400px;
+    top: 100px;
+    transition: 0.5s right linear;
+    background-color: white;
+    border-top: 2px solid $blue;
+    border-left: 2px solid $blue;
+    @include mq($M){
+        border: none;
+        transition: 1s all linear;
+        background-color: transparent;
+        top: auto;
+        right: 66.666%;
+    }
     &.hide{
         right: -2000px;
     }
     &.active{
         background-color: white;
-        right: 33.333%;
+        right: 0;
+        @include mq($M){
+            right: 33.333%;
+        }
+        // li{
+        //     @include mq($M){
+        //         border: 2px solid $blue;
+        //     }
+        // }
     }
 }
 #menu-right{
-    right: calc(33.333% - 289px);
+    right: -400px;
+    top: 215px;
     text-align: right;
     transition: 0.5s right linear;
+    background-color: white;
+    border-bottom: 2px solid $blue;
+    border-left: 2px solid $blue;
+    @include mq($M){
+        border: none;
+        transition: 0.5s right linear;
+        background-color: transparent;
+        top: auto;
+        right: calc(38.333% - 289px);
+    }
     &.hide{
         right: -1000px;
     }
     &.active{
         background-color: white;
-        right: calc(33.333% - 289px);
+        right: 0;
+        @include mq($M){
+            right: calc(33.333% - 289px);
+        }
     }
 }
 .logo-right{
@@ -107,8 +162,13 @@ nav{
     }
 }
 .logo-left{
+    display: none;
     @include mq($M){
+        display: flex;
         border-right: 1px solid black;
+    }
+    a{
+        margin: 0 auto;
     }
 }
 .nav-logo{

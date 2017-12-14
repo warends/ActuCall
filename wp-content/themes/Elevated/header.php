@@ -38,7 +38,7 @@
 										'menu_id' 		=> 'menu-left',
 										'depth'         =>  2,
 										'container'     =>  'ul',
-										'menu_class'	=> 'list-unstyled'
+										'menu_class'	=> 'list-unstyled menu'
 									));
 					  		?>
 					  </div>
@@ -55,14 +55,14 @@
 											'menu_id' 		=> 'menu-right',
 											'depth'         =>  2,
 											'container'     =>  'ul',
-											'menu_class'	=> 'list-unstyled'
+											'menu_class'	=> 'list-unstyled menu'
 
 										));
 						  		?>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col text-center">
+						<div class="col text-center logo-text">
 							<h4 class="green">Elevated Foresight</h4>
 						</div>
 					</div>

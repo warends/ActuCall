@@ -22,7 +22,7 @@
 				<p class="pull-left">&copy;<?php echo date("Y"); echo " "; echo bloginfo('name'); ?>. All rights reserved.</p>
 			</div>
 			<div class="col-md-4">
-				<a class="btn-green" href="/contact">Get in touch</a>
+				<a class="btn-green" href="/contact">Contact Us</a>
 			</div>
 		</div>
 	</footer>
