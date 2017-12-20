@@ -90,11 +90,17 @@
     @include mq('min-width:1500px'){
         height: 1000px;
     }
+    .container{
+      max-width: 1250px;
+    }
     .title{
         @include horz-align;
     }
+    .cap-row{
+      height: 800px;
+    }
 }
-#solutions-line{
+#business-procurement-solutions-line{
     position: absolute;
     top: 145px;
     width: 500px;
@@ -129,7 +135,7 @@
         left: 15%;
     }
 }
-#benchmarking-line{
+#price-benchmarking-line{
     position: absolute;
     transform: rotateX(-180deg);
     top: 500px;
@@ -150,7 +156,7 @@
         left: 12%;
     }
 }
-#contract-line{
+#business-development-line{
     position: absolute;
     top: 360px;
     width: 250px;
@@ -170,7 +176,7 @@
         left: 35%;
     }
 }
-#contact-line{
+#contact-center-analytics-line{
     position: absolute;
     top: 360px;
     width: 650px;
@@ -189,7 +195,7 @@
         left: 10%;
     }
 }
-#risk-reduction-line{
+#cost-and-risk-reduction-line{
     position: absolute;
     transform: rotateX(-180deg);
     top: 460px;
@@ -206,28 +212,28 @@
         left: 20%;
     }
 }
-.solutions-line, .risk-reduction-line{
+.business-procurement-solutions-line, .cost-and-risk-reduction-line{
     stroke-dasharray: 850;
     stroke-dashoffset: 850;
     &.active{
         animation: draw 0.5s linear forwards;
     }
 }
-.real-time-line, .benchmarking-line{
+.real-time-call-intelligence-tools-line, .price-benchmarking-line{
     stroke-dasharray: 693;
     stroke-dashoffset: 693;
     &.active{
         animation: draw 0.5s linear forwards;
     }
 }
-.contract-line{
+.business-development-line{
     stroke-dasharray: 296;
     stroke-dashoffset: 296;
     &.active{
         animation: draw 0.5s linear forwards;
     }
 }
-.contact-line{
+.contact-center-analytics-line{
     stroke-dasharray: 649;
     stroke-dashoffset: 649;
     &.active{
@@ -259,35 +265,41 @@
     color: #fff;
     left: 15px;
     z-index: 9;
-        &#real-time{
+        &#real-time-call-intelligence-tools{
             top: 10%;
         }
-        &#solutions{
+        &#business-procurement-solutions{
             left: 160px;
             top: 23%;
         }
-        &#contract{
+        &#business-development{
             left: 160px;
             top: 74%;
         }
-        &#contact{
+        &#contact-center-analytics{
             top: 36%;
         }
-        &#risk-reduction{
+        &#cost-and-risk-reduction{
             left: 160px;
             top: 49%;
         }
-        &#benchmarking{
+        &#price-benchmarking{
             top: 61%;
         }
-        h5, .cap-icon{
+        h5, .cap-icon, p{
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
         }
+        p{
+          bottom: 15%;
+          color: white;
+          visibility: hidden;
+          opacity: 0;
+        }
         h5{
             top: 35%;
-            width: 70%;
+            width: 85%;
             text-align: center;
         }
         .cap-icon{
@@ -305,7 +317,7 @@
             h5{
                 top: 50%;
             }
-            h5, .cap-icon{
+            h5, .cap-icon, p{
                 transition: all 0.3s ease-in;
                 visibility: visible;
                 opacity: 1;
@@ -317,22 +329,22 @@
             &#real-time{
                 top: 0;
             }
-            &#solutions{
+            &#business-procurement-solutions{
                 left: 225px;
                 top: 15%;
             }
-            &#contract{
+            &#business-development{
                 left: 440px;
                 top: 30%;
             }
-            &#contact{
+            &#contact-center-analytics{
                 top: 30%;
             }
-            &#risk-reduction{
+            &#cost-and-risk-reduction{
                 left: 225px;
                 top: 45%;
             }
-            &#benchmarking{
+            &#price-benchmarking{
                 top: 60%;
             }
         }
@@ -376,6 +388,110 @@
         right: 0;
         width: 100%;
         z-index: -1;
+    }
+}
+#roadmap {
+    height: 850px;
+    position: relative;
+    padding-top: 1em;
+    @include mq($M){
+        padding-top: 0;
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.4);
+        @include mq($M){
+            display: none;
+        }
+    }
+    img{
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .route{
+        color: white;
+        position: relative;
+        width: 96%;
+        left: 15px;
+        right: 15px;
+        @include mq($M){
+            position: absolute;
+            width: 15%;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .analysis{
+        width: 96%;
+        left: 15px;
+        right: 15px;
+        @include mq($M){
+            left: 3%;
+            top: 2%;
+            width: 18%;
+        }
+    }
+    .assessment{
+        left: 15px;
+        right: 15px;
+        top: 4%;
+        @include mq($M){
+            left: 30%;
+            right: auto;
+            top: 4%;
+        }
+    }
+    .implementation{
+        left: 15px;
+        right: 15px;
+        top: 7%;
+        @include mq($M){
+            left: 50%;
+            top: 7%;
+            right: auto;
+        }
+    }
+    .impact{
+        left: 15px;
+        right: 15px;
+        top: 8%;
+        @include mq($M){
+            left: auto;
+            right: 17%;
+            top: 8%;
+        }
+    }
+    .result{
+        top: 12%;
+        left: 15px;
+        right: 15px;
+        @include mq($M){
+            top: 4%;
+            left: auto;
+            right: 2%;
+        }
+    }
+    .title{
+        left: 15px;
+        text-align: left;
+        color: white;
+        width: 96%;
+        right: 50px;
+        bottom: 15px;
+        position: absolute;
+        @include mq($M){
+            text-align: right;
+            right: 50px;
+            width: 50%;
+        }
     }
 }
 #icon-map{

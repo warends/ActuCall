@@ -48,9 +48,9 @@ $(document).ready(function(){
         });
 
         if(window.innerWidth >= 768){
-            $('#real-time').addClass('active');
-            $('.real-time-line').addClass('active');
-            $('.real-time').addClass('active');
+            $('#real-time-call-intelligence-tools').addClass('active');
+            $('.real-time-call-intelligence-tools-line').addClass('active');
+            $('.real-time-call-intelligence-tools').addClass('active');
         }
 
         $cap.hover(function() {
@@ -87,13 +87,38 @@ $(document).ready(function(){
 
     } else if(page === 'page-about'){
 
-        $(window).on('scroll', function() {
+        $(window).on('scroll', () => {
             if($('.denver').isInViewport()) {
                 $('.denver').addClass('active');
             } else {
                 $('.denver').removeClass('active');
             }
         });
+    } else if(page === 'capability'){
+        setActiveFeature();
+
+        const $btns = $('.feature-btn');
+        const $features = $('.feature-content');
+
+        $btns.on('click', (e) => {
+            $btns.removeClass('active');
+            $features.removeClass('active');
+            setTimeout(()=>{
+              $(e.target).addClass('active');
+              var target = $(e.target).data('target');
+              $('#' + target).addClass('active');
+            }, 350);
+        });
+    }
+
+    function setActiveFeature(){
+      let btn = $('.feature-col').first().find('.feature-btn');
+      btn.addClass('active');
+      let target = btn.data('target');
+      $('#' + target).addClass('active');
+      let pathArray = window.location.pathname.split('/');
+      $('.cap-more.' + pathArray[2]).addClass('active');
+      console.log(pathArray[2]);
     }
 
     $.fn.isInViewport = function() {

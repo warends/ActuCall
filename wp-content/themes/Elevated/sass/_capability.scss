@@ -1,0 +1,112 @@
+#capability{
+  .cap-banner{
+    //height: 400px;
+    background-size: cover;
+  }
+  .banner-text{
+    img{
+      //margin: 0 auto;
+      width: 100px;
+    }
+  }
+  .wysywig-content{
+    ul{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      li{
+        width: 50%;
+        float: left;
+        padding: 5px 15px;
+        &:before{
+          content: '•';
+          display: block;
+          float: left;
+          font-size: 34px;
+          top: -10px;
+          margin-right: 10px;
+          position: relative;
+          left: 0;
+
+        }
+      }
+    }
+  }
+  .cap-features{
+    background-color: $grey;
+    .feature-btn{
+      border: 2px solid $green;
+      color: $blue;
+      padding: 5px 0;
+      width: 100%;
+      font-family: $bebas-bold;
+      font-size: 30px;
+      position: relative;
+      &.active, &:focus, &:hover{
+          background-color: $green;
+          color: white;
+          outline: none;
+      }
+      &.active{
+        &:after{
+          @include horz-align;
+          position: absolute;
+          top: 100%;
+        	height: 0;
+          width: 0;
+          border: 30px solid transparent;
+          border-top-color: $green;
+          content: "";
+        }
+      }
+    }
+  }
+  .feature-content-container{
+    position: relative;
+    height: 400px;
+    .feature-content{
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: 0.35s linear;
+      &.active{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .more-caps{
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .cap-more{
+      border: 2px solid $blue;
+      img{
+        width: 50px;
+        margin: 0 auto;
+        height: 75px;
+      }
+      .cap-icon-white{
+        display: none;
+      }
+      &.active, &:hover{
+        background-color: $green;
+        .cap-icon-black{
+          display: none;
+        }
+        .cap-icon-white{
+          display: block;
+        }
+        a{
+          color: white;
+        }
+      }
+    }
+  }
+}

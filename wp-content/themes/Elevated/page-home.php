@@ -23,12 +23,12 @@ get_header(); ?>
                     	'post_type' =>  'banner_slide',
                     	'orderby' => 'title',
                     	'order' => 'ASC',));
-                	?>
+          ?>
 
-                    <?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
+            <?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
 
 						<?php
-                    		$banner_image   =   get_field('banner_image');
+              $banner_image   =   get_field('banner_image');
 							$banner_header = get_field('banner_header');
 							$banner_subheader = get_field('banner_subheader');
 							$button_link = get_field('button_link');
@@ -38,11 +38,11 @@ get_header(); ?>
 							$button_2_link = get_field('button_2_link');
 							$button_2_copy = get_field('button_2_copy');
 							$is_video = get_field('is_video');
-                    		$video_file = get_field('video_file');
+              $video_file = get_field('video_file');
 							$right_align = get_field('right_align');
 							$right_align = get_field('right_align');
 							$button_num = get_field('number_of_buttons');
-                		?>
+            ?>
 
 						<?php if($is_video){ //check for video ?>
 							<div>
@@ -100,75 +100,87 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section id="capabilities" class="row">
-
-				<h3 class="title">What we do best</h3>
-
-				<?php $loop = new WP_Query( array (
-					'post_type' =>  'cap_box',
-					'orderby' => 'title',
-					'order' => 'ASC',));
-				?>
-
-				<?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
-
-					<?php
-						$bg_image = get_field('bg_image');
-						$cap_subheading = get_field('cap_subheading');
-						$cap_copy = get_field('cap_copy');
-						$cap_icon = get_field('cap_icon');
-						$cap_slug = get_field('cap_slug');
-					?>
-
-					<div class="cap" id="<?php echo $cap_slug ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<?php echo $bg_image['url']; ?>') no-repeat center center; background-size:cover;">
-						<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon"/>
-						<h5 class="white"><?php echo the_title() ?></h5>
+			<section id="capabilities">
+				<div class="container">
+					<div class="row text-center">
+						<div class="col">
+							<h3 class="title">What we do best</h3>
+						</div>
 					</div>
 
-					<div class="cap-desc padded <?php echo $cap_slug ?>">
-						<h6><?php echo $cap_subheading ?></h6>
-						<p class="padded-top"><?php echo $cap_copy ?></p>
+					<div class="row cap-row">
+						<div class="col">
+							<?php $loop = new WP_Query( array (
+								'post_type' =>  'cap_box',
+								'orderby' => 'title',
+								'order' => 'ASC',));
+							?>
+
+							<?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
+
+								<?php
+									$bg_image = get_field('bg_image');
+									$cap_subheading = get_field('cap_subheading');
+									$cap_copy = get_field('cap_copy');
+									$cap_icon = get_field('cap_icon');
+									$cap_slug = get_field('cap_slug');
+								?>
+
+								<div class="cap" id="<?php echo $cap_slug ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<?php echo $bg_image['url']; ?>') no-repeat center center; background-size:cover;">
+									<a href="/capabilities/<?php echo $cap_slug ?>">
+										<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon"/>
+										<h5 class="white"><?php echo the_title() ?></h5>
+										<p>View Details</p>
+									</a>
+								</div>
+
+								<div class="cap-desc padded <?php echo $cap_slug ?>">
+									<h6><?php echo $cap_subheading ?></h6>
+									<p class="padded-top"><?php echo $cap_copy ?></p>
+								</div>
+
+							<?php endwhile; wp_reset_query();?>
+
+							<svg class="clip-svg">
+								<defs>
+									<clipPath id="hexagon-clip" clipPathUnits="objectBoundingBox">
+										<polygon points="0.25 0.05, 0.75 0.05, 1 0.5, 0.75 0.95, 0.25 0.95, 0 0.5" />
+									</clipPath>
+								</defs>
+							</svg>
+
+							<svg id="real-time-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.96 147.69">
+							  <title>real-time-line</title>
+							  <polyline class="real-time-call-intelligence-tools-line line" points="0 4 503 4 631 145" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+
+							<svg id="business-procurement-solutions-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701.58 154.41">
+							  <title>solutions-line</title>
+							  <polyline class="business-procurement-solutions-line line" points="3.19 152 115.19 4 605.19 4 698.19 152" fill="transparent" stroke="#35b829" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+
+							<svg id="business-development-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.52 9.52">
+							  <title>contract-line</title>
+							  <polyline class="business-development-line line" points="0.02 4 295.52 5.5 295.52 4.5" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+
+							<svg id="cost-and-risk-reduction-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701.58 154.41">
+							  <title>risk-reduction-line</title>
+							  <polyline class="cost-and-risk-reduction-line line" points="3.19 152 115.19 4 605.19 4 698.19 152" fill="transparent" stroke="#35b829" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+
+							<svg id="price-benchmarking-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.96 147.69">
+							  <title>benchmarking-line</title>
+							  <polyline class="price-benchmarking-line line" points="0 4 503 4 631 145" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+
+							<svg id="contact-center-analytics-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 649.52 9.5">
+							  <title>contact-line</title>
+							  <polyline class="contact-center-analytics-line line" points="0.02 4 295.52 5.5 649.52 5.5" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
+							</svg>
+						</div>
 					</div>
-
-				<?php endwhile; wp_reset_query();?>
-
-				<svg class="clip-svg">
-					<defs>
-						<clipPath id="hexagon-clip" clipPathUnits="objectBoundingBox">
-							<polygon points="0.25 0.05, 0.75 0.05, 1 0.5, 0.75 0.95, 0.25 0.95, 0 0.5" />
-						</clipPath>
-					</defs>
-				</svg>
-
-				<svg id="real-time-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.96 147.69">
-				  <title>real-time-line</title>
-				  <polyline class="real-time-line line" points="0 4 503 4 631 145" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
-
-				<svg id="solutions-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701.58 154.41">
-				  <title>solutions-line</title>
-				  <polyline class="solutions-line line" points="3.19 152 115.19 4 605.19 4 698.19 152" fill="transparent" stroke="#35b829" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
-
-				<svg id="contract-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.52 9.52">
-				  <title>contract-line</title>
-				  <polyline class="contract-line line" points="0.02 4 295.52 5.5 295.52 4.5" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
-
-				<svg id="risk-reduction-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701.58 154.41">
-				  <title>risk-reduction-line</title>
-				  <polyline class="risk-reduction-line line" points="3.19 152 115.19 4 605.19 4 698.19 152" fill="transparent" stroke="#35b829" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
-
-				<svg id="benchmarking-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 633.96 147.69">
-				  <title>benchmarking-line</title>
-				  <polyline class="benchmarking-line line" points="0 4 503 4 631 145" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
-
-				<svg id="contact-line" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 649.52 9.5">
-				  <title>contact-line</title>
-				  <polyline class="contact-line line" points="0.02 4 295.52 5.5 649.52 5.5" fill="transparent" stroke="#35b729" stroke-miterlimit="10" stroke-width="8"/>
-				</svg>
+				</div>
 
 			<div id="mtns">
 
@@ -634,18 +646,44 @@ get_header(); ?>
 						</div>
 						<div class="col-md-4">
 							<p class="padded-top-mobile"><?php echo $actucall_solution ?></p>
-
 							<p class="padded-top"><?php echo $approach ?></p>
 						</div>
 					</div>
 			</section>
 
 			<section id="roadmap">
-				<!-- <div class="row">
-					<div class="col"> -->
-						<img class="img-responsive" src="<?php echo $roadmap ?>">
-					<!-- </div>
-				</div> -->
+					<img class="img-responsive" src="<?php echo $roadmap ?>">
+					<div class="overlay"></div>
+					<div class="route analysis">
+						<p class="small">+1928m.</p>
+						<h5>ROUTE ANALYSIS</h5>
+						<p>Fact based decision making is the Elevated way. Taking the high-ground approach, we evaluate & account for all variables based on data sets available & current market assumptions.</p>
+						<p>After preliminary analysis of data collection, the Elevated team will make recommendations for implementing programs & reaching strategic milestones.</p>
+					</div>
+					<div class="route assessment">
+						<p class="small">+1023m.</p>
+						<h5>ELEVATED ASSESSMENT</h5>
+						<p>At Elevated, we know that beginning with the end in mind is key. We meet with clients to understand the goals & challenges we will be facing as we prepare our ascent.  Wework to build partnerships from the begining, ensuring longevity and sucess.</p>
+					</div>
+					<div class="route implementation">
+						<p class="small">+2459m.</p>
+						<h5>Program implementation</h5>
+						<p>Our team quickly moves to engage business teams by implementing programs to rapidly gain traction & assess impact to business.</p>
+						<p>Programs move from test to scaled phases to engage & remove any threats, leading to a more productive environment.</p>
+					</div>
+					<div class="route impact">
+						<p class="small">+2892m.</p>
+						<h5>IMPACT</h5>
+						<p>With Exiting in Mind, review final steps to ensure operational efficiencies maintained long-term.</p>
+					</div>
+					<div class="route result">
+						<p class="small">+3211m.</p>
+						<h5>ELEVATED RESULTS & EXIT STRATEGY</h5>
+					</div>
+					<div class="title">
+						<p class="lead">We’re About Developing Your Longterm Strategy & Exiting</p>
+						<h2>OUR HOLISTIC ROADMAP FOR SUCCESS</h2>
+					</div>
 			</section>
 
 			<section id="video" class="padded-vert2x">

@@ -953,10 +953,11 @@ h1 {
       font-size: 72px; } }
 
 h2 {
-  font-size: 30px; }
+  font-size: 36px;
+  line-height: 1; }
   @media (min-width: 992px) {
     h2 {
-      font-size: 36px; } }
+      font-size: 60px; } }
 
 h3 {
   font-size: 26px; }
@@ -983,9 +984,11 @@ p {
   margin-bottom: 0;
   margin-top: 0; }
   p.lead {
-    font-size: 26px; }
+    font-size: 20px; }
   p.lead-m {
     font-size: 20px; }
+  p .small {
+    font-size: 12px; }
 
 p, a, button, input {
   font-family: "Roboto", sans-serif; }
@@ -1209,6 +1212,12 @@ sup {
 .margin-bottom2x {
   margin-bottom: 2em; }
 
+.clearfix {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  clear: both; }
+
 .btn-green {
   padding: 8px 20px;
   background-color: white;
@@ -1248,6 +1257,10 @@ sup {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0; }
+
+.white-box {
+  margin-top: 2em;
+  background-color: rgba(255, 255, 255, 0.6); }
 
 footer .col-md-4 {
   height: 70px;
@@ -1829,12 +1842,16 @@ nav {
   @media (min-width: 1500px) {
     #capabilities {
       height: 1000px; } }
+  #capabilities .container {
+    max-width: 1250px; }
   #capabilities .title {
     position: relative;
     left: 50%;
     transform: translateX(-50%); }
+  #capabilities .cap-row {
+    height: 800px; }
 
-#solutions-line {
+#business-procurement-solutions-line {
   position: absolute;
   top: 145px;
   width: 500px;
@@ -1842,10 +1859,10 @@ nav {
   z-index: 1;
   display: none; }
   @media (min-width: 768px) {
-    #solutions-line {
+    #business-procurement-solutions-line {
       display: block; } }
   @media (min-width: 1600px) {
-    #solutions-line {
+    #business-procurement-solutions-line {
       top: 200px;
       width: 800px;
       left: 20%; } }
@@ -1869,7 +1886,7 @@ nav {
       width: 1000px;
       left: 15%; } }
 
-#benchmarking-line {
+#price-benchmarking-line {
   position: absolute;
   transform: rotateX(-180deg);
   top: 500px;
@@ -1878,19 +1895,19 @@ nav {
   z-index: 1;
   display: none; }
   @media (min-width: 768px) {
-    #benchmarking-line {
+    #price-benchmarking-line {
       display: block; } }
   @media (min-width: 1400px) {
-    #benchmarking-line {
+    #price-benchmarking-line {
       width: 700px;
       left: 15%; } }
   @media (min-width: 1600px) {
-    #benchmarking-line {
+    #price-benchmarking-line {
       top: 500px;
       width: 1000px;
       left: 12%; } }
 
-#contract-line {
+#business-development-line {
   position: absolute;
   top: 360px;
   width: 250px;
@@ -1898,19 +1915,19 @@ nav {
   z-index: 1;
   display: none; }
   @media (min-width: 768px) {
-    #contract-line {
+    #business-development-line {
       display: block; } }
   @media (min-width: 1400px) {
-    #contract-line {
+    #business-development-line {
       width: 350px;
       left: 45%; } }
   @media (min-width: 1600px) {
-    #contract-line {
+    #business-development-line {
       top: 425px;
       width: 500px;
       left: 35%; } }
 
-#contact-line {
+#contact-center-analytics-line {
   position: absolute;
   top: 360px;
   width: 650px;
@@ -1918,18 +1935,18 @@ nav {
   z-index: 1;
   display: none; }
   @media (min-width: 768px) {
-    #contact-line {
+    #contact-center-analytics-line {
       display: block; } }
   @media (min-width: 1400px) {
-    #contact-line {
+    #contact-center-analytics-line {
       left: 15%; } }
   @media (min-width: 1600px) {
-    #contact-line {
+    #contact-center-analytics-line {
       top: 420px;
       width: 850px;
       left: 10%; } }
 
-#risk-reduction-line {
+#cost-and-risk-reduction-line {
   position: absolute;
   transform: rotateX(-180deg);
   top: 460px;
@@ -1938,36 +1955,36 @@ nav {
   z-index: 1;
   display: none; }
   @media (min-width: 768px) {
-    #risk-reduction-line {
+    #cost-and-risk-reduction-line {
       display: block; } }
   @media (min-width: 1600px) {
-    #risk-reduction-line {
+    #cost-and-risk-reduction-line {
       top: 540px;
       width: 800px;
       left: 20%; } }
 
-.solutions-line, .risk-reduction-line {
+.business-procurement-solutions-line, .cost-and-risk-reduction-line {
   stroke-dasharray: 850;
   stroke-dashoffset: 850; }
-  .solutions-line.active, .risk-reduction-line.active {
+  .business-procurement-solutions-line.active, .cost-and-risk-reduction-line.active {
     animation: draw 0.5s linear forwards; }
 
-.real-time-line, .benchmarking-line {
+.real-time-call-intelligence-tools-line, .price-benchmarking-line {
   stroke-dasharray: 693;
   stroke-dashoffset: 693; }
-  .real-time-line.active, .benchmarking-line.active {
+  .real-time-call-intelligence-tools-line.active, .price-benchmarking-line.active {
     animation: draw 0.5s linear forwards; }
 
-.contract-line {
+.business-development-line {
   stroke-dasharray: 296;
   stroke-dashoffset: 296; }
-  .contract-line.active {
+  .business-development-line.active {
     animation: draw 0.5s linear forwards; }
 
-.contact-line {
+.contact-center-analytics-line {
   stroke-dasharray: 649;
   stroke-dashoffset: 649; }
-  .contact-line.active {
+  .contact-center-analytics-line.active {
     animation: draw 0.5s linear forwards; }
 
 @keyframes draw {
@@ -1994,28 +2011,33 @@ nav {
   color: #fff;
   left: 15px;
   z-index: 9; }
-  .cap#real-time {
+  .cap#real-time-call-intelligence-tools {
     top: 10%; }
-  .cap#solutions {
+  .cap#business-procurement-solutions {
     left: 160px;
     top: 23%; }
-  .cap#contract {
+  .cap#business-development {
     left: 160px;
     top: 74%; }
-  .cap#contact {
+  .cap#contact-center-analytics {
     top: 36%; }
-  .cap#risk-reduction {
+  .cap#cost-and-risk-reduction {
     left: 160px;
     top: 49%; }
-  .cap#benchmarking {
+  .cap#price-benchmarking {
     top: 61%; }
-  .cap h5, .cap .cap-icon {
+  .cap h5, .cap .cap-icon, .cap p {
     position: absolute;
     left: 50%;
     transform: translateX(-50%); }
+  .cap p {
+    bottom: 15%;
+    color: white;
+    visibility: hidden;
+    opacity: 0; }
   .cap h5 {
     top: 35%;
-    width: 70%;
+    width: 85%;
     text-align: center; }
   .cap .cap-icon {
     visibility: hidden;
@@ -2030,7 +2052,7 @@ nav {
     transition: all 0.3s ease-in; }
     .cap:hover h5, .cap.active h5 {
       top: 50%; }
-    .cap:hover h5, .cap:hover .cap-icon, .cap.active h5, .cap.active .cap-icon {
+    .cap:hover h5, .cap:hover .cap-icon, .cap:hover p, .cap.active h5, .cap.active .cap-icon, .cap.active p {
       transition: all 0.3s ease-in;
       visibility: visible;
       opacity: 1; }
@@ -2040,18 +2062,18 @@ nav {
       height: 250px; }
       .cap#real-time {
         top: 0; }
-      .cap#solutions {
+      .cap#business-procurement-solutions {
         left: 225px;
         top: 15%; }
-      .cap#contract {
+      .cap#business-development {
         left: 440px;
         top: 30%; }
-      .cap#contact {
+      .cap#contact-center-analytics {
         top: 30%; }
-      .cap#risk-reduction {
+      .cap#cost-and-risk-reduction {
         left: 225px;
         top: 45%; }
-      .cap#benchmarking {
+      .cap#price-benchmarking {
         top: 60%; } }
 
 .cap-desc {
@@ -2090,6 +2112,100 @@ nav {
   width: 100%;
   z-index: -1; }
 
+#roadmap {
+  height: 850px;
+  position: relative;
+  padding-top: 1em; }
+  @media (min-width: 992px) {
+    #roadmap {
+      padding-top: 0; } }
+  #roadmap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); }
+    @media (min-width: 992px) {
+      #roadmap .overlay {
+        display: none; } }
+  #roadmap img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  #roadmap .route {
+    color: white;
+    position: relative;
+    width: 96%;
+    left: 15px;
+    right: 15px; }
+    @media (min-width: 992px) {
+      #roadmap .route {
+        position: absolute;
+        width: 15%; } }
+    #roadmap .route p {
+      font-size: 14px; }
+  #roadmap .analysis {
+    width: 96%;
+    left: 15px;
+    right: 15px; }
+    @media (min-width: 992px) {
+      #roadmap .analysis {
+        left: 3%;
+        top: 2%;
+        width: 18%; } }
+  #roadmap .assessment {
+    left: 15px;
+    right: 15px;
+    top: 4%; }
+    @media (min-width: 992px) {
+      #roadmap .assessment {
+        left: 30%;
+        right: auto;
+        top: 4%; } }
+  #roadmap .implementation {
+    left: 15px;
+    right: 15px;
+    top: 7%; }
+    @media (min-width: 992px) {
+      #roadmap .implementation {
+        left: 50%;
+        top: 7%;
+        right: auto; } }
+  #roadmap .impact {
+    left: 15px;
+    right: 15px;
+    top: 8%; }
+    @media (min-width: 992px) {
+      #roadmap .impact {
+        left: auto;
+        right: 17%;
+        top: 8%; } }
+  #roadmap .result {
+    top: 12%;
+    left: 15px;
+    right: 15px; }
+    @media (min-width: 992px) {
+      #roadmap .result {
+        top: 4%;
+        left: auto;
+        right: 2%; } }
+  #roadmap .title {
+    left: 15px;
+    text-align: left;
+    color: white;
+    width: 96%;
+    right: 50px;
+    bottom: 15px;
+    position: absolute; }
+    @media (min-width: 992px) {
+      #roadmap .title {
+        text-align: right;
+        right: 50px;
+        width: 50%; } }
+
 #icon-map .green-subhead:before {
   height: 110px;
   top: 8px; }
@@ -2121,6 +2237,94 @@ nav {
   #video video {
     width: 100%; }
 
+#capability .cap-banner {
+  background-size: cover; }
+
+#capability .banner-text img {
+  width: 100px; }
+
+#capability .wysywig-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  #capability .wysywig-content ul li {
+    width: 50%;
+    float: left;
+    padding: 5px 15px; }
+    #capability .wysywig-content ul li:before {
+      content: '•';
+      display: block;
+      float: left;
+      font-size: 34px;
+      top: -10px;
+      margin-right: 10px;
+      position: relative;
+      left: 0; }
+
+#capability .cap-features {
+  background-color: #EBEBEB; }
+  #capability .cap-features .feature-btn {
+    border: 2px solid #35b729;
+    color: #003e8e;
+    padding: 5px 0;
+    width: 100%;
+    font-family: "Bebas Bold", "Roboto", arial, sans-serif;
+    font-size: 30px;
+    position: relative; }
+    #capability .cap-features .feature-btn.active, #capability .cap-features .feature-btn:focus, #capability .cap-features .feature-btn:hover {
+      background-color: #35b729;
+      color: white;
+      outline: none; }
+    #capability .cap-features .feature-btn.active:after {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      top: 100%;
+      height: 0;
+      width: 0;
+      border: 30px solid transparent;
+      border-top-color: #35b729;
+      content: ""; }
+
+#capability .feature-content-container {
+  position: relative;
+  height: 400px; }
+  #capability .feature-content-container .feature-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.35s linear; }
+    #capability .feature-content-container .feature-content.active {
+      opacity: 1;
+      visibility: visible; }
+
+#capability .more-caps a {
+  text-decoration: none;
+  color: black; }
+
+#capability .more-caps .cap-more {
+  border: 2px solid #003e8e; }
+  #capability .more-caps .cap-more img {
+    width: 50px;
+    margin: 0 auto;
+    height: 75px; }
+  #capability .more-caps .cap-more .cap-icon-white {
+    display: none; }
+  #capability .more-caps .cap-more.active, #capability .more-caps .cap-more:hover {
+    background-color: #35b729; }
+    #capability .more-caps .cap-more.active .cap-icon-black, #capability .more-caps .cap-more:hover .cap-icon-black {
+      display: none; }
+    #capability .more-caps .cap-more.active .cap-icon-white, #capability .more-caps .cap-more:hover .cap-icon-white {
+      display: block; }
+    #capability .more-caps .cap-more.active a, #capability .more-caps .cap-more:hover a {
+      color: white; }
+
 #page-about {
   height: 100%;
   position: relative;
@@ -2139,9 +2343,6 @@ nav {
     background-size: cover; }
     #page-about .about-us .row {
       height: auto; }
-    #page-about .about-us .white-box {
-      margin-top: 2em;
-      background-color: rgba(255, 255, 255, 0.6); }
   #page-about .home {
     height: 300px;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/img/denver-bg.png") no-repeat center top;

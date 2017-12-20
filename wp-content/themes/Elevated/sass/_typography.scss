@@ -35,9 +35,10 @@ h1{
     }
 }
 h2{
-    font-size: 30px;
+    font-size: 36px;
+    line-height: 1;
     @include mq($M){
-        font-size: 36px;
+        font-size: 60px;
     }
 }
 h3{
@@ -67,10 +68,13 @@ p{
     margin-bottom: 0;
     margin-top: 0;
     &.lead{
-        font-size: 26px;
+        font-size: 20px;
     }
     &.lead-m{
         font-size: 20px;
+    }
+    .small{
+        font-size: 12px;
     }
 }
 p, a, button, input {

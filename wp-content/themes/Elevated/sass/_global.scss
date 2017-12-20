@@ -93,6 +93,12 @@ sup{
 .margin-bottom2x{
     margin-bottom: 2em;
 }
+.clearfix{
+  content: "";
+	display: table;
+	table-layout: fixed;
+	clear: both;
+}
 .btn-green{
     padding: 8px 20px;
     background-color: white;
@@ -135,6 +141,12 @@ sup{
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+.white-box{
+    margin-top: 2em;
+    background-color: rgba(255,255,255,0.6);
+    //background-color: rgba(0,0,0,0.3);
+    //box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
 }
 footer{
     .col-md-4{
