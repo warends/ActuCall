@@ -11,9 +11,8 @@ get_header(); ?>
 				<div class="container">
 					<div class="row justify-content-center">
 						<div class="col-xs-12 col-md-8">
-							<h1 class="text-center"><?php the_title(); ?></h1>
+							<h1 class="text-center green"><?php the_title(); ?></h1>
 							<?php while (have_posts() ): the_post(); ?>
-
 								<?php the_content(); ?>
 							<?php endwhile; ?>
 						</div>

@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer container" role="contentinfo">
 		<div class="site-info row">
 			<div class="col-md-4">
-					<p class="small">Elevated Foresight.<br />Englewood, Colorado<br />(720)984-1566</p>
+					<p class="small">Elevated Foresight<br />Englewood, Colorado<br />(720)984-1566</p>
 			</div>
 			<div class="col-md-4">
 				<p class="pull-left">&copy;<?php echo date("Y"); echo " "; echo bloginfo('name'); ?>. All rights reserved.</p>
@@ -26,6 +26,7 @@
 			</div>
 		</div>
 	</footer>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -267,6 +267,9 @@
     z-index: 9;
         &#real-time-call-intelligence-tools{
             top: 10%;
+            @include mq($M){
+                top: 0;
+            }
         }
         &#business-procurement-solutions{
             left: 160px;
@@ -433,44 +436,45 @@
         width: 96%;
         left: 15px;
         right: 15px;
+        top: 12%;
         @include mq($M){
             left: 3%;
-            top: 2%;
+            top: 14%;
             width: 18%;
         }
     }
     .assessment{
         left: 15px;
         right: 15px;
-        top: 4%;
+        top: 14%;
         @include mq($M){
             left: 30%;
             right: auto;
-            top: 4%;
+            top: 15%;
         }
     }
     .implementation{
         left: 15px;
         right: 15px;
-        top: 7%;
+        top: 16%;
         @include mq($M){
             left: 50%;
-            top: 7%;
+            top: 13%;
             right: auto;
         }
     }
     .impact{
         left: 15px;
         right: 15px;
-        top: 8%;
+        top: 18%;
         @include mq($M){
             left: auto;
             right: 17%;
-            top: 8%;
+            top: 14%;
         }
     }
     .result{
-        top: 12%;
+        top: 20%;
         left: 15px;
         right: 15px;
         @include mq($M){
@@ -483,14 +487,17 @@
         left: 15px;
         text-align: left;
         color: white;
-        width: 96%;
-        right: 50px;
-        bottom: 15px;
+        top: 15px;
         position: absolute;
+        h3, p{
+            display: inline-block;
+        }
+        h3{
+            padding-right: 15px;
+        }
         @include mq($M){
-            text-align: right;
-            right: 50px;
-            width: 50%;
+            left: 50px;
+            //width: 50%;
         }
     }
 }
@@ -526,8 +533,5 @@
     }
     @include mq($M){
         height: 100%;
-    }
-    video{
-        width: 100%;
     }
 }

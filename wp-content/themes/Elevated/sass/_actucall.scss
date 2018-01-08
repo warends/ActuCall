@@ -1,0 +1,22 @@
+#actucall{
+    .banner.top{
+        height: 400px;
+    }
+    h4.header{
+        border-left: 8px solid $green;
+        padding-left: 10px;
+    }
+    .features{
+        .feature{
+            height: 180px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 1em;
+        }
+        .icon{
+            height: 95px;
+            margin: 0 auto;
+        }
+
+    }
+}

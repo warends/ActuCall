@@ -43,10 +43,10 @@
 					  		?>
 					  </div>
 						<div class="col-2 logo-left margin-top text-center">
-							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"></a>
+							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo" alt="Elevated Foresight Logo"></a>
 						</div>
 						<div class="col-2 margin-top logo-right hidden-sm-down text-center">
-							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo" class="nav-logo"></a>
+							<a href="/"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/procurement-logo.png" alt="Procurement Logo" class="nav-logo" alt="Elevated Prcurement Logo"></a>
 						</div>
 						<div class="col-4">
 							<?php
@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<a href="#" id="menu-btn" class="green">
-			            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo"><p>MENU</p>
+			            <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Actucall Logo" class="nav-logo" alt="Elevated Menu Icon"><p>MENU</p>
 			        </a>
 			</nav>
 	</header><!-- #masthead -->

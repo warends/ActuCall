@@ -11,15 +11,19 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="capability" class="site-main" role="main">
-			<div class="cap-banner" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url('<?php echo $banner['url']; ?>') no-repeat center center; background-size: cover;">
+			<div class="cap-banner" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0)), url('<?php echo $banner['url']; ?>') no-repeat center center; background-size: cover;">
 
-				<div class="container">
-					<div class="row padded-vert2x align-items-center">
+				<div class="container padded-vert2x">
+					<div class="row">
+						<div class="col">
+							<img src="<?php echo $icon['url'];?>" class="img-responsive cap-icon padded-bottom" alt="<?php echo $icon['alt'];?>">
+							<h2 class="green"><?php the_title(); ?></h2>
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-6">
-							<div class="banner-text">
-								<img src="<?php echo $icon['url'];?>" class="img-responsive cap-icon padded-bottom">
-								<h2><?php the_title(); ?></h2>
-								<p class="padded-vert"><?php echo $banner_text ?></p>
+							<div class="white-box padded">
+								<p><?php echo $banner_text ?></p>
 							</div>
 						</div>
 					</div>
@@ -56,11 +60,11 @@ get_header(); ?>
 							}
 
 								$loop = new WP_Query( array (
-                    	'post_type' =>  'cap_features',
-											'category_name' => $cat_title,
-                    	'orderby' => 'title',
-                    	'order' => 'ASC',));
-          ?>
+                    				'post_type' =>  'cap_features',
+									'category_name' => $cat_title,
+                    				'orderby' => 'title',
+                    				'order' => 'ASC',));
+          					?>
 					<div class="row padded-bottom text-center justify-content-around">
 
 						<?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
@@ -89,13 +93,13 @@ get_header(); ?>
 												<p><?php the_content(); ?></p>
 											</div>
 											<div class="col-md-6">
-												<img src="<?php echo $feature_image['url']; ?>" class="img-responsive">
+												<img src="<?php echo $feature_image['url']; ?>" class="img-responsive" alt="<?php echo $feature_image['alt'];?>">
 											</div>
 										</div>
 									<?php } else { ?>
 										<div class="row padded-vert2x feature-content align-items-center" id="<?php echo $id ?>">
 											<div class="col-md-6">
-												<img src="<?php echo $feature_image['url']; ?>" class="img-responsive">
+												<img src="<?php echo $feature_image['url']; ?>" class="img-responsive" alt="<?php echo $feature_image['alt'];?>">
 											</div>
 											<div class="col-md-6 wysywig-content">
 												<p><?php the_content(); ?></p>
@@ -137,8 +141,8 @@ get_header(); ?>
 								<div class="col-md-4 text-center padded-bottom">
 									<div class="cap-more padded <?php echo $cap_slug ?>">
 										<a href="/capabilities/<?php echo $cap_slug ?>">
-											<img src="<?php echo $cap_icon_black['url']; ?>" class="img-responsive cap-icon-black"/>
-											<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon-white"/>
+											<img src="<?php echo $cap_icon_black['url']; ?>" class="img-responsive cap-icon-black" alt="<?php echo $cap_icon_black['alt'];?>"/>
+											<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon-white" alt="<?php echo $cap_icon['alt'];?>"/>
 											<h5><?php echo the_title() ?></h5>
 										</a>
 									</div>

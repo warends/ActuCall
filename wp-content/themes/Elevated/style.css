@@ -1200,6 +1200,12 @@ sup {
   margin-top: 1em;
   margin-bottom: 1em; }
 
+.padded-bottom-mobile {
+  padding-bottom: 1em; }
+  @media (min-width: 992px) {
+    .padded-bottom-mobile {
+      padding-bottom: 0; } }
+
 .margin-top2x {
   margin-top: 2em; }
 
@@ -1232,6 +1238,21 @@ sup {
     color: white;
     background-color: #35b729; }
 
+.btn-solid {
+  text-align: center;
+  display: block;
+  padding: 8px 20px;
+  background-color: #35b729;
+  color: white;
+  border: 4px solid #35b729;
+  border-radius: 0px;
+  text-decoration: none;
+  font-family: "Bebas Regular", "Roboto", arial, sans-serif;
+  font-size: 30px;
+  transition: all .3s ease-in; }
+  .btn-solid:hover {
+    color: #003e8e; }
+
 .green-subhead:before {
   float: left;
   display: block;
@@ -1261,6 +1282,9 @@ sup {
 .white-box {
   margin-top: 2em;
   background-color: rgba(255, 255, 255, 0.6); }
+
+video {
+  width: 100%; }
 
 footer .col-md-4 {
   height: 70px;
@@ -1390,7 +1414,7 @@ nav {
 
 #menu-right {
   right: -400px;
-  top: 215px;
+  top: 260px;
   text-align: right;
   transition: 0.5s right linear;
   background-color: white;
@@ -1638,8 +1662,6 @@ nav {
 #Contact {
   height: 100%;
   background-color: #003e8e; }
-  #Contact h1 {
-    color: white; }
   #Contact p {
     color: white; }
   #Contact .wpcf7-form {
@@ -2013,6 +2035,9 @@ nav {
   z-index: 9; }
   .cap#real-time-call-intelligence-tools {
     top: 10%; }
+    @media (min-width: 992px) {
+      .cap#real-time-call-intelligence-tools {
+        top: 0; } }
   .cap#business-procurement-solutions {
     left: 160px;
     top: 23%; }
@@ -2150,41 +2175,42 @@ nav {
   #roadmap .analysis {
     width: 96%;
     left: 15px;
-    right: 15px; }
+    right: 15px;
+    top: 12%; }
     @media (min-width: 992px) {
       #roadmap .analysis {
         left: 3%;
-        top: 2%;
+        top: 14%;
         width: 18%; } }
   #roadmap .assessment {
     left: 15px;
     right: 15px;
-    top: 4%; }
+    top: 14%; }
     @media (min-width: 992px) {
       #roadmap .assessment {
         left: 30%;
         right: auto;
-        top: 4%; } }
+        top: 15%; } }
   #roadmap .implementation {
     left: 15px;
     right: 15px;
-    top: 7%; }
+    top: 16%; }
     @media (min-width: 992px) {
       #roadmap .implementation {
         left: 50%;
-        top: 7%;
+        top: 13%;
         right: auto; } }
   #roadmap .impact {
     left: 15px;
     right: 15px;
-    top: 8%; }
+    top: 18%; }
     @media (min-width: 992px) {
       #roadmap .impact {
         left: auto;
         right: 17%;
-        top: 8%; } }
+        top: 14%; } }
   #roadmap .result {
-    top: 12%;
+    top: 20%;
     left: 15px;
     right: 15px; }
     @media (min-width: 992px) {
@@ -2196,15 +2222,15 @@ nav {
     left: 15px;
     text-align: left;
     color: white;
-    width: 96%;
-    right: 50px;
-    bottom: 15px;
+    top: 15px;
     position: absolute; }
+    #roadmap .title h3, #roadmap .title p {
+      display: inline-block; }
+    #roadmap .title h3 {
+      padding-right: 15px; }
     @media (min-width: 992px) {
       #roadmap .title {
-        text-align: right;
-        right: 50px;
-        width: 50%; } }
+        left: 50px; } }
 
 #icon-map .green-subhead:before {
   height: 110px;
@@ -2234,26 +2260,28 @@ nav {
   @media (min-width: 992px) {
     #video {
       height: 100%; } }
-  #video video {
-    width: 100%; }
 
 #capability .cap-banner {
   background-size: cover; }
 
-#capability .banner-text img {
+#capability .cap-banner img {
   width: 100px; }
 
-#capability .wysywig-content ul {
+#capability .feature-content-container .wysywig-content ul, #capability .content .wysywig-content ul {
   margin: 0;
   padding: 0;
   list-style: none;
   margin-top: 1em;
   margin-bottom: 1em; }
-  #capability .wysywig-content ul li {
-    width: 50%;
-    float: left;
+  #capability .feature-content-container .wysywig-content ul li, #capability .content .wysywig-content ul li {
+    width: 100%;
+    float: none;
     padding: 5px 15px; }
-    #capability .wysywig-content ul li:before {
+    @media (min-width: 992px) {
+      #capability .feature-content-container .wysywig-content ul li, #capability .content .wysywig-content ul li {
+        width: 50%;
+        float: left; } }
+    #capability .feature-content-container .wysywig-content ul li:before, #capability .content .wysywig-content ul li:before {
       content: '•';
       display: block;
       float: left;
@@ -2262,6 +2290,11 @@ nav {
       margin-right: 10px;
       position: relative;
       left: 0; }
+
+#capability .content .wysywig-content ul li {
+  padding: 8px 15px; }
+  #capability .content .wysywig-content ul li:before {
+    content: ''; }
 
 #capability .cap-features {
   background-color: #EBEBEB; }
@@ -2272,7 +2305,11 @@ nav {
     width: 100%;
     font-family: "Bebas Bold", "Roboto", arial, sans-serif;
     font-size: 30px;
-    position: relative; }
+    position: relative;
+    margin-bottom: 1em; }
+    @media (min-width: 992px) {
+      #capability .cap-features .feature-btn {
+        margin-bottom: 0; } }
     #capability .cap-features .feature-btn.active, #capability .cap-features .feature-btn:focus, #capability .cap-features .feature-btn:hover {
       background-color: #35b729;
       color: white;
@@ -2291,7 +2328,18 @@ nav {
 
 #capability .feature-content-container {
   position: relative;
-  height: 400px; }
+  height: 650px; }
+  @media (min-width: 992px) {
+    #capability .feature-content-container {
+      height: 400px; } }
+  #capability .feature-content-container img {
+    padding-bottom: 1em; }
+    @media (min-width: 992px) {
+      #capability .feature-content-container img {
+        padding-bottom: 0; } }
+  #capability .feature-content-container ul li {
+    float: left;
+    padding: 0 15px; }
   #capability .feature-content-container .feature-content {
     visibility: hidden;
     opacity: 0;
@@ -2299,7 +2347,11 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    transition: 0.35s linear; }
+    transition: 0.35s linear;
+    padding-top: 0; }
+    @media (min-width: 992px) {
+      #capability .feature-content-container .feature-content {
+        padding-top: 2em; } }
     #capability .feature-content-container .feature-content.active {
       opacity: 1;
       visibility: visible; }
@@ -2324,6 +2376,23 @@ nav {
       display: block; }
     #capability .more-caps .cap-more.active a, #capability .more-caps .cap-more:hover a {
       color: white; }
+
+#actucall .banner.top {
+  height: 400px; }
+
+#actucall h4.header {
+  border-left: 8px solid #35b729;
+  padding-left: 10px; }
+
+#actucall .features .feature {
+  height: 180px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 1em; }
+
+#actucall .features .icon {
+  height: 95px;
+  margin: 0 auto; }
 
 #page-about {
   height: 100%;
@@ -2368,3 +2437,21 @@ nav {
       width: 70px; }
     #page-about .home .procurement {
       height: 70px; }
+
+#verticals .banner {
+  height: 400px; }
+
+#verticals h4.header {
+  border-left: 8px solid #35b729;
+  padding-left: 10px;
+  margin-top: 100px; }
+
+#verticals .list {
+  background-color: #003e8e;
+  color: white; }
+
+#verticals .vertical {
+  text-align: center; }
+  #verticals .vertical .icon {
+    margin: 0 auto;
+    width: 65px; }

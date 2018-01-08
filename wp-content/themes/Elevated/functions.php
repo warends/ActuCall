@@ -134,6 +134,8 @@ function will_arends_development_scripts() {
 
 	wp_enqueue_script( 'slick-slider', get_template_directory_uri() . '/js/slick.min.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'scroll-reveal', get_template_directory_uri() . '/js/scrollreveal.min.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'actucall', get_template_directory_uri() . '/app.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

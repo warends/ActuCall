@@ -3,37 +3,50 @@
     //height: 400px;
     background-size: cover;
   }
-  .banner-text{
+  .cap-banner{
     img{
       //margin: 0 auto;
       width: 100px;
     }
   }
-  .wysywig-content{
-    ul{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      margin-top: 1em;
-      margin-bottom: 1em;
-      li{
-        width: 50%;
-        float: left;
-        padding: 5px 15px;
-        &:before{
-          content: '•';
-          display: block;
-          float: left;
-          font-size: 34px;
-          top: -10px;
-          margin-right: 10px;
-          position: relative;
-          left: 0;
+  .feature-content-container, .content{
+      .wysywig-content{
+        ul{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          li{
+            width: 100%;
+            float: none;
+            padding: 5px 15px;
+            @include mq($M){
+                width: 50%;
+                float: left;
+            }
+            &:before{
+              content: '•';
+              display: block;
+              float: left;
+              font-size: 34px;
+              top: -10px;
+              margin-right: 10px;
+              position: relative;
+              left: 0;
 
+            }
+          }
         }
       }
-    }
   }
+  .content .wysywig-content ul li{
+      padding: 8px 15px;
+      &:before{
+          content: '';
+      }
+  }
+
   .cap-features{
     background-color: $grey;
     .feature-btn{
@@ -44,6 +57,10 @@
       font-family: $bebas-bold;
       font-size: 30px;
       position: relative;
+      margin-bottom: 1em;
+      @include mq($M){
+          margin-bottom: 0;
+      }
       &.active, &:focus, &:hover{
           background-color: $green;
           color: white;
@@ -65,7 +82,20 @@
   }
   .feature-content-container{
     position: relative;
-    height: 400px;
+    height: 650px;
+    @include mq($M){
+        height: 400px;
+    }
+    img{
+        padding-bottom: 1em;
+        @include mq($M){
+            padding-bottom: 0;
+        }
+    }
+    ul li{
+        float: left;
+        padding: 0 15px;
+    }
     .feature-content{
       visibility: hidden;
       opacity: 0;
@@ -74,6 +104,10 @@
       left: 0;
       right: 0;
       transition: 0.35s linear;
+      padding-top: 0;
+      @include mq($M){
+          padding-top: 2em;
+      }
       &.active{
         opacity: 1;
         visibility: visible;

@@ -10,6 +10,7 @@ $actucall_slogan = get_field('actucall_slogan');
 $actucall_solution = get_field('actucall_solution');
 $approach = get_field('approach');
 $actucall_movie = get_field('actucall_movie');
+$actucall_header = get_field('actucall_header');
 $actucall_poster = get_field('actucall_poster');
 $roadmap = get_field('roadmap');
 
@@ -23,7 +24,7 @@ get_header(); ?>
                     	'post_type' =>  'banner_slide',
                     	'orderby' => 'title',
                     	'order' => 'ASC',));
-          ?>
+          			?>
 
             <?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
 
@@ -50,7 +51,7 @@ get_header(); ?>
 									<source src="<?php echo $video_file['url']; ?>" type="video/mp4">
 								</video>
 								<div class="container">
-									<h1 class="white"><?php echo $banner_header ?></h1>
+									<h1 class="green"><?php echo $banner_header ?></h1>
 									<h3 class="white"><?php echo $banner_subheader ?></h3>
 									<?php if($button_num == 1){ ?>
 											<a class="btn-green btn-one" href="<?php echo $button_link ?>"><?php echo $button_text ?></a>
@@ -65,10 +66,10 @@ get_header(); ?>
 							<div style="background-image: url(<?php echo $banner_image['url']; ?>);">
 								<div class="container">
 									<?php if($right_align){ ?>
-										<h1 class="white pull-right"><?php echo $banner_header ?></h1>
+										<h1 class="green pull-right"><?php echo $banner_header ?></h1>
 										<h3 class="white pull-right"><?php echo $banner_subheader ?></h3>
 									<?php  } else { ?>
-										<h1 class="white"><?php echo $banner_header ?></h1>
+										<h1 class="green"><?php echo $banner_header ?></h1>
 										<h3 class="white"><?php echo $banner_subheader ?></h3>
 									<?php } ?>
 									<a class="btn-green btn-left" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
@@ -128,7 +129,7 @@ get_header(); ?>
 
 								<div class="cap" id="<?php echo $cap_slug ?>" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<?php echo $bg_image['url']; ?>') no-repeat center center; background-size:cover;">
 									<a href="/capabilities/<?php echo $cap_slug ?>">
-										<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon"/>
+										<img src="<?php echo $cap_icon['url']; ?>" class="img-responsive cap-icon" alt="<?php echo $cap_icon['alt']; ?>"/>
 										<h5 class="white"><?php echo the_title() ?></h5>
 										<p>View Details</p>
 									</a>
@@ -652,7 +653,7 @@ get_header(); ?>
 			</section>
 
 			<section id="roadmap">
-					<img class="img-responsive" src="<?php echo $roadmap ?>">
+					<img class="img-responsive" src="<?php echo $roadmap['url'] ?>" alt="<?php echo $roadmap['alt']; ?>">
 					<div class="overlay"></div>
 					<div class="route analysis">
 						<p class="small">+1928m.</p>
@@ -681,8 +682,8 @@ get_header(); ?>
 						<h5>ELEVATED RESULTS & EXIT STRATEGY</h5>
 					</div>
 					<div class="title">
+						<h3 class="padded-right">OUR HOLISTIC ROADMAP FOR SUCCESS</h3>
 						<p class="lead">We’re About Developing Your Longterm Strategy & Exiting</p>
-						<h2>OUR HOLISTIC ROADMAP FOR SUCCESS</h2>
 					</div>
 			</section>
 
@@ -690,7 +691,7 @@ get_header(); ?>
 				<div class="container">
 					<div class="row">
 						<div class="col text-center">
-							<h3 class="white">NOW AVAILABLE COMMERCIALLY FOR THE FIRST-TIME EVER</h3>
+							<h3 class="white"><?php echo $actucall_header ?></h3>
 							<h1 class="green">Actucall</h1>
 							<sup>Powered by Trillys</sup>
 
@@ -700,7 +701,7 @@ get_header(); ?>
 						<div class="col-10">
 							<a href="/contact" class="chat-bubble white caps">Contact</a>
 
-							<video controls poster="<?php echo $actucall_poster['url']; ?>">
+							<video controls controlsList="nodownload" poster="<?php echo $actucall_poster['url']; ?>">
 							  <source src="<?php echo $actucall_movie['url']; ?>" type="video/mp4">
 							  Your browser does not support HTML5 video.
 							</video>

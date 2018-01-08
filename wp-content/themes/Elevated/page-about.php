@@ -42,7 +42,7 @@ get_header(); ?>
 					<div class="row align-items-center">
 						<div class="col-md-4">
 							<h4 class="inline padded-right">Sandra Lund</h4>
-							<img src="<?php echo $headshot['url']; ?>" class="img-responsive headshot"/>
+							<img src="<?php echo $headshot['url']; ?>" class="img-responsive headshot" alt="<?php echo $headshot['alt']?>"/>
 							<!-- <h4 class="inline pull-right">CEO</h4> -->
 						</div>
 						<div class="col-md-8">
@@ -57,9 +57,9 @@ get_header(); ?>
 						<div class="row">
 							<div class="col text-center">
 								<div class="denver">
-									<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Elevated Logo" class="elevated img-responsive ">
+									<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/head-logo.png" alt="Elevated Logo" class="elevated img-responsive" alt="Elevated Foresight Logo">
 									<h1 class="padded-horz white">Proudly calling Denver our home</h1>
-									<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ElevatedProcurement_White.svg" alt="Procurement Logo" class="img-responsive procurement">
+									<img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ElevatedProcurement_White.svg" alt="Procurement Logo" class="img-responsive procurement" alt="Elevated Procurement Logo">
 								</div>
 							</div>
 						</div>

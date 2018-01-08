@@ -27,6 +27,7 @@ $(document).ready(function(){
     const $caps = $('.cap');
     const $lines = $('.line');
     const $capDesc = $('.cap-desc');
+    window.sr = ScrollReveal();
 
     function clearCap(){
         $caps.removeClass('active');
@@ -36,7 +37,6 @@ $(document).ready(function(){
     let page = $('main').attr('id');
 
     if(page === 'home'){
-        console.log('home page');
 
         $('.slider').slick({
             dots: true,
@@ -84,7 +84,6 @@ $(document).ready(function(){
             bgVid.style.width = '620px';
         }
 
-
     } else if(page === 'page-about'){
 
         $(window).on('scroll', () => {
@@ -94,12 +93,12 @@ $(document).ready(function(){
                 $('.denver').removeClass('active');
             }
         });
-    } else if(page === 'capability'){
-        setActiveFeature();
 
+    } else if(page === 'capability'){
+
+        setActiveFeature();
         const $btns = $('.feature-btn');
         const $features = $('.feature-content');
-
         $btns.on('click', (e) => {
             $btns.removeClass('active');
             $features.removeClass('active');
@@ -109,6 +108,20 @@ $(document).ready(function(){
               $('#' + target).addClass('active');
             }, 350);
         });
+
+    } else if(page === 'actucall'){
+
+        actucallReveal();
+
+    } else if(page === 'verticals'){
+
+        sr.reveal('.vertical', { distance: '50px',duration: 300 }, 200);
+
+    }
+
+    function actucallReveal() {
+        sr.reveal('.feature.one', { distance: '100px',duration: 500 }, 200);
+        sr.reveal('.feature.two', { distance: '100px',duration: 500 }, 200);
     }
 
     function setActiveFeature(){
