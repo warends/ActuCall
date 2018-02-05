@@ -5,17 +5,17 @@
         color: white;
     }
     .wpcf7-form{
-        // background: url('assets/img/letter_2.svg') no-repeat center center;
-        // background-size: contain;
-        // height: 700px;
         padding-top: 2em;
         .form-container{
+            background: url('assets/img/procurement-logo.png') no-repeat 97% 15px;
+            background-size: 75px auto;
+            padding-top: 85px;
             background-color: white;
         }
         p{
             color: black;
             line-height: 2;
-            padding: 0 1em;
+            padding: 0 2em;
         }
         select{
             line-height: 2.2;
@@ -62,5 +62,8 @@
             position: relative;
             margin-top: 1em;
         }
+    }
+    .wpcf7-response-output{
+        color: white;
     }
 }

@@ -1,73 +1,14 @@
 #home{
     background: linear-gradient(to top, rgba(116,116,116,1) 0%,rgba(0,0,0,0) 100%);
 }
-#slider{
-    .arrow-prev, .arrow-next{
-        z-index: 998;
-        font-size: 44px;
-        position: absolute;
-        display: block;
-        cursor: pointer;
-        top: 50%;
-        transform: translate(0, -50%);
-        padding: 0;
-        border: none;
-        outline: none;
-    }
-    .arrow-prev {
-        left: 15px;
-    }
-    .arrow-next{
-        right: 15px;
-    }
-    .slick-dots {
-        bottom: 30px;
-        li button:before {
-            font-size: 14px;
-        }
-    }
-    .slick-slide{
-        position: relative;
-        background-size: cover;
-        height: 350px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        @include mq($M){
-            height: 450px;
-        }
-        h1{
-            line-height: 1;
-            padding-top: 15px;
-            @include mq($S){
-                line-height: 1.3;
-                padding-top: 1em;
-            }
-        }
-        .btn-green{
-            position: absolute;
-            bottom: 20%;
-        }
-        .btn-one{
-            @include horz-align;
-            position: absolute;
-        }
-        .btn-left{
-            left: 15px;
-            @include mq($M){
-                left: 35%;
-            }
-        }
-        .btn-right{
-            right: 15px;
-            @include mq($M){
-                right: 35%;
-            }
-        }
-    }
+#home-banner{
+    position: relative;
+    height: 450px;
+    overflow: hidden;
     video{
         position: absolute;
         width: auto;
-        z-index: -1;
+        z-index: 0;
         top: 0;
         @include mq($M){
             top: -50px;
@@ -77,6 +18,66 @@
         }
         @include mq('min-width:1400px'){
             top: -200px;
+        }
+    }
+    .container{
+        z-index: 9;
+    }
+    h1{
+        line-height: 1;
+        padding-top: 15px;
+        @include mq($S){
+            line-height: 1.3;
+            padding-top: 1em;
+        }
+    }
+    .margin-mobile{
+        margin-top: 1em;
+        @include mq($M){
+            margin-top: 0;
+        }
+    }
+    .banner-box{
+        display: none;
+        z-index: 2;
+        position: absolute;
+        @include mq($M){
+            display: block;
+        }
+    }
+    .banner-line{
+        stroke-dasharray: 1994;
+        stroke-dashoffset: 1994;
+        &.active{
+            animation: draw 1s linear forwards;
+        }
+    }
+    .white-box{
+        z-index: 1;
+        margin-top: 0;
+        position: relative;
+        height: 105px;
+        @include mq($M){
+            height: 125px;
+        }
+        @include mq($L){
+            height: 150px;
+            h5{
+                font-size: 26px;
+            }
+        }
+        h5{
+            font-size: 22px;
+        }
+    }
+    .btn-green{
+        z-index: 9;
+        @include horz-align;
+        position: absolute;
+        bottom: 10px;
+        font-size: 18px;
+        @include mq($L){
+            font-size: 24px;
         }
     }
 }
@@ -266,28 +267,28 @@
     left: 15px;
     z-index: 9;
         &#real-time-call-intelligence-tools{
-            top: 10%;
+            top: 6%;
             @include mq($M){
                 top: 0;
             }
         }
         &#business-procurement-solutions{
             left: 160px;
-            top: 23%;
+            top: 19%;
         }
         &#business-development{
             left: 160px;
-            top: 74%;
+            top: 70%;
         }
         &#contact-center-analytics{
-            top: 36%;
+            top: 32%;
         }
         &#cost-and-risk-reduction{
             left: 160px;
-            top: 49%;
+            top: 45%;
         }
         &#price-benchmarking{
-            top: 61%;
+            top: 57%;
         }
         h5, .cap-icon, p{
             position: absolute;
@@ -368,7 +369,7 @@
         color: black;
         transition: all .25s ease-in;
         font-size: 20px;
-        z-index: 999;
+        z-index: 8;
         @include mq($S){
             width: 50%;
         }
@@ -424,9 +425,11 @@
         width: 96%;
         left: 15px;
         right: 15px;
+        padding-right: 15px;
         @include mq($M){
             position: absolute;
             width: 15%;
+            padding-right: 0;
         }
         p{
             font-size: 14px;
@@ -516,6 +519,7 @@
     background-color: $blue;
     height: 500px;
     .chat-bubble{
+        display: none;
         z-index: 9;
         font-family: $bebas-bold;
         height: 100px;
@@ -523,13 +527,27 @@
         background: url('assets/img/chat-bubble.png') no-repeat center center;
         background-size: contain;
         position: absolute;
-        right: 20px;
-        top: 10px;
+        right: 30px;
+        top: 15px;
         text-decoration: none;
         padding-top: 25px;
         padding-left: 15px;
         font-size: 24px;
         text-transform: uppercase;
+        @include mq($M){
+            display: block
+        }
+    }
+    .btn-green{
+        display: none;
+        z-index: 9;
+        font-family: $bebas-bold;
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        @include mq($M){
+            display: block
+        }
     }
     @include mq($M){
         height: 100%;

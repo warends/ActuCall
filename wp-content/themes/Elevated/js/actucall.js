@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // var path = document.querySelector('.contact-line');
+    // var path = document.querySelector('.banner-line');
     // var length = path.getTotalLength();
     // console.log(length);
 
@@ -20,6 +20,9 @@ $(document).ready(function(){
             } else {
                 $menuBtn.removeClass("active");
                 $menu.removeClass('hide');
+                if($menu.hasClass('active')){
+                        $menu.removeClass('active');
+                }
             }
         });
     }
@@ -34,18 +37,11 @@ $(document).ready(function(){
         $lines.removeClass('active');
         $capDesc.removeClass('active');
     }
-    let page = $('main').attr('id');
 
+    let page = $('main').attr('id');
     if(page === 'home'){
 
-        $('.slider').slick({
-            dots: true,
-            autoplay:true,
-            autoplaySpeed:4000,
-            slidesToScroll:1,
-            prevArrow: '<i class="fa fa-arrow-left white arrow-prev" aria-hidden="true"></i>',
-            nextArrow: '<i class="fa fa-arrow-right white arrow-next" aria-hidden="true"></i>'
-        });
+        bannerReveal();
 
         if(window.innerWidth >= 768){
             $('#real-time-call-intelligence-tools').addClass('active');
@@ -77,23 +73,19 @@ $(document).ready(function(){
 
         let bgVid = document.getElementById('bgvid'),
             width = window.innerWidth + 'px';
-        bgVid.play();
+
+        bgVid.onloadedmetadata = function() {
+            bgVid.play();
+        };
+
         if(window.innerWidth >= 768){
             bgVid.style.width = width;
         } else {
-            bgVid.style.width = '620px';
+            bgVid.style.width = '800px';
         }
 
     } else if(page === 'page-about'){
-
-        $(window).on('scroll', () => {
-            if($('.denver').isInViewport()) {
-                $('.denver').addClass('active');
-            } else {
-                $('.denver').removeClass('active');
-            }
-        });
-
+        bindAboutScroll();
     } else if(page === 'capability'){
 
         setActiveFeature();
@@ -110,13 +102,34 @@ $(document).ready(function(){
         });
 
     } else if(page === 'actucall'){
-
         actucallReveal();
-
     } else if(page === 'verticals'){
+        verticalReveal();
+    }
 
+    function verticalReveal(){
         sr.reveal('.vertical', { distance: '50px',duration: 300 }, 200);
+    }
 
+    function bindAboutScroll(){
+        $(window).on('scroll', () => {
+            if($('.denver').isInViewport()) {
+                $('.denver').addClass('active');
+            } else {
+                $('.denver').removeClass('active');
+            }
+        });
+    }
+
+    function bannerReveal(){
+        sr.reveal('.box-container', {
+            distance: '100px',
+            duration: 500,
+            delay: 1000,
+            afterReveal: function(el){
+                $(el).find('.banner-line').addClass('active');
+            }
+        }, 2000);
     }
 
     function actucallReveal() {
@@ -137,7 +150,7 @@ $(document).ready(function(){
     $.fn.isInViewport = function() {
       let elementTop = $(this).offset().top,
           elementBottom = elementTop + $(this).outerHeight(),
-          viewportTop = $(window).scrollTop(),
+          viewportTop = $(window).scrollTop() - 300,
           viewportBottom = viewportTop + $(window).height();
       return elementBottom > viewportTop && elementTop < viewportBottom;
     };

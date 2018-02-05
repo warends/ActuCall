@@ -32,6 +32,7 @@ nav{
     }
 }
 #menu-btn{
+    background-color: white;
     cursor: pointer;
     opacity: 1;
     visibility: visible;
@@ -54,9 +55,10 @@ nav{
         height: 50px;
     }
     p{
+        background-color: white;
         font-family: $bebas-bold;
         font-size: 16px;
-        margin: 0;
+        margin: -5px 0 0;
         padding-left: 10px;
     }
     .icon-bar{
@@ -119,6 +121,7 @@ nav{
     &.active{
         background-color: white;
         right: 0;
+        z-index: 999;
         @include mq($M){
             right: 33.333%;
         }

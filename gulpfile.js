@@ -3,13 +3,14 @@ const gulp = require('gulp'),
 	sourcemaps = require('gulp-sourcemaps'),
 	babel = require('gulp-babel'),
 	concat = require('gulp-concat'),
-	gutil = require('gulp-util');
+	uglify = require('gulp-uglify'),
+	gutil = require('gulp-util'),
+	cleanCSS = require('gulp-clean-css'),
     path = './wp-content/themes/Elevated';
 
 const paths = {
 	js: [path + '/js/actucall.js'],
 	css: [path + '/sass/**/*.scss'],
-	//img: ['img/*.svg', 'img/*.png', 'img/*.jpg'],
 	vendor: ['vendor/jquery.js',
 			'vendor/TweenMax.min.js',
 			'vendor/MorphSVGPlugin.min.js',
@@ -20,7 +21,14 @@ const paths = {
 gulp.task('sass', function() {
   return gulp.src(path + '/sass/style.scss')
     .pipe(sass().on('error', sass.logError))
+	.pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(path));
+});
+
+gulp.task('prod', function () {
+  gulp.src(path + '/app.js')
+      .pipe(uglify())
+    .pipe(gulp.dest(path))
 });
 
 gulp.task('js', function(){

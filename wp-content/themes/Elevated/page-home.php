@@ -18,69 +18,70 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="home" class="site-main" role="main">
-			<section id="slider">
-				<div class="slider">
-					<?php $loop = new WP_Query( array (
-                    	'post_type' =>  'banner_slide',
-                    	'orderby' => 'title',
-                    	'order' => 'ASC',));
-          			?>
+			<section id="home-banner">
 
-            <?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
+				<?php $loop = new WP_Query( array (
+	            	'post_type' =>  'banner_slide',
+	            	'orderby' => 'title',
+	            	'order' => 'ASC',));
+	  			?>
+
+            	<?php while ($loop ->have_posts() ) : $loop->the_post(); ?>
 
 						<?php
-              $banner_image   =   get_field('banner_image');
 							$banner_header = get_field('banner_header');
 							$banner_subheader = get_field('banner_subheader');
-							$button_link = get_field('button_link');
-							$button_text = get_field('button_text');
 							$button_1_link = get_field('button_1_link');
 							$button_1_copy = get_field('button_1_copy');
 							$button_2_link = get_field('button_2_link');
 							$button_2_copy = get_field('button_2_copy');
 							$is_video = get_field('is_video');
-              $video_file = get_field('video_file');
-							$right_align = get_field('right_align');
-							$right_align = get_field('right_align');
-							$button_num = get_field('number_of_buttons');
-            ?>
+              				$video_file = get_field('video_file');
+            			?>
 
-						<?php if($is_video){ //check for video ?>
-							<div>
-								<video id="bgvid" playsinline autoplay muted loop>
+						<?php if($is_video){ ?>
+
+								<video id="bgvid" playsinline autoplay muted loop poster="<?php bloginfo('template_url'); ?>/assets/img/home-banner-poster.png">
 									<source src="<?php echo $video_file['url']; ?>" type="video/mp4">
 								</video>
 								<div class="container">
-									<h1 class="green"><?php echo $banner_header ?></h1>
-									<h3 class="white"><?php echo $banner_subheader ?></h3>
-									<?php if($button_num == 1){ ?>
-											<a class="btn-green btn-one" href="<?php echo $button_link ?>"><?php echo $button_text ?></a>
-									<?php } else { ?>
-										<a class="btn-green btn-left" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
-										<a class="btn-green btn-right" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
-									<?php } ?>
+									<div class=="row">
+										<div class="col">
+											<h1 class="green"><?php echo $banner_header ?></h1>
+											<h3 class="white"><?php echo $banner_subheader ?></h3>
+										</div>
+									</div>
+										<div class="row justify-content-around padded-top2x">
+											<div class="col-md-4">
+												<div class="box-container">
+													<svg class="banner-box" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 707 310">
+													  <title>banner-box-path</title>
+													  <rect class="banner-line" x="5" y="5" width="697" height="300" style="fill: none;stroke: #35b829;stroke-miterlimit: 10;stroke-width: 10px"/>
+													</svg>
+													<div class="white-box padded text-center">
+														<h5 class="padded-bottom">Winning stragies across the globe</h5>
+													</div>
+													<a class="btn-green" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
+												</div>
+											</div>
+											<div class="col-md-4 margin-mobile">
+												<div class="box-container">
+													<svg class="banner-box" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 707 310">
+													  <title>banner-box-path</title>
+													  <rect class="banner-line" x="5" y="5" width="697" height="300" style="fill: none;stroke: #35b829;stroke-miterlimit: 10;stroke-width: 10px"/>
+													</svg>
+													<div class="white-box padded text-center">
+														<h5 class="padded-bottom">Optimizing Savings & Growing Revenues</h5>
+													</div>
+													<a class="btn-green" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
+												</div>
+
+											</div>
+										</div>
 								</div>
-							</div>
 
-						<?php  } else { //background image ?>
-							<div style="background-image: url(<?php echo $banner_image['url']; ?>);">
-								<div class="container">
-									<?php if($right_align){ ?>
-										<h1 class="green pull-right"><?php echo $banner_header ?></h1>
-										<h3 class="white pull-right"><?php echo $banner_subheader ?></h3>
-									<?php  } else { ?>
-										<h1 class="green"><?php echo $banner_header ?></h1>
-										<h3 class="white"><?php echo $banner_subheader ?></h3>
-									<?php } ?>
-									<a class="btn-green btn-left" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
-									<a class="btn-green btn-right" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
-								</div>
-							</div>
-
-						<?php } ?>
-
+						<?php  } ?>
                     <?php endwhile; wp_reset_query();?>
-				</div>
 			</section>
 
 			<section id="about" class="container">
@@ -390,7 +391,7 @@ get_header(); ?>
 				<div class="row">
 					<div class="col padded-vert2x">
 						<div class="green-subhead">
-							<h1 class="header"><?php echo $actucall_slogan ?></h1>
+							<h2 class="header"><?php echo $actucall_slogan ?></h2>
 						</div>
 					</div>
 				</div>
@@ -698,8 +699,8 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="row padded-top justify-content-center">
-						<div class="col-10">
-							<a href="/contact" class="chat-bubble white caps">Contact</a>
+						<div class="col-md-10 col-sm-12">
+							<a href="/actucall" class="btn-green">View More</a>
 
 							<video controls controlsList="nodownload" poster="<?php echo $actucall_poster['url']; ?>">
 							  <source src="<?php echo $actucall_movie['url']; ?>" type="video/mp4">
