@@ -31,6 +31,9 @@ get_header(); ?>
 						<?php
 							$banner_header = get_field('banner_header');
 							$banner_subheader = get_field('banner_subheader');
+							$banner_box_1_text = get_field('banner_box_1_text');
+							$banner_box_2_text = get_field('banner_box_2_text');
+							$banner_subheader = get_field('banner_subheader');
 							$button_1_link = get_field('button_1_link');
 							$button_1_copy = get_field('button_1_copy');
 							$button_2_link = get_field('button_2_link');
@@ -59,7 +62,7 @@ get_header(); ?>
 													  <rect class="banner-line" x="5" y="5" width="697" height="300" style="fill: none;stroke: #35b829;stroke-miterlimit: 10;stroke-width: 10px"/>
 													</svg>
 													<div class="white-box padded text-center">
-														<h5 class="padded-bottom">Winning stragies across the globe</h5>
+														<h5 class="padded-bottom"><?php echo $banner_box_2_text ?></h5>
 													</div>
 													<a class="btn-green" href="<?php echo $button_2_link ?>"><?php echo $button_2_copy ?></a>
 												</div>
@@ -71,7 +74,7 @@ get_header(); ?>
 													  <rect class="banner-line" x="5" y="5" width="697" height="300" style="fill: none;stroke: #35b829;stroke-miterlimit: 10;stroke-width: 10px"/>
 													</svg>
 													<div class="white-box padded text-center">
-														<h5 class="padded-bottom">Optimizing Savings & Growing Revenues</h5>
+														<h5 class="padded-bottom"><?php echo $banner_box_1_text ?></h5>
 													</div>
 													<a class="btn-green" href="<?php echo $button_1_link ?>"><?php echo $button_1_copy ?></a>
 												</div>
@@ -693,8 +696,8 @@ get_header(); ?>
 					<div class="row">
 						<div class="col text-center">
 							<h3 class="white"><?php echo $actucall_header ?></h3>
-							<h1 class="green">Actucall</h1>
-							<sup>Powered by Trillys</sup>
+							<h1 class="green">Elevated Foresight</h1>
+							<sup>Powered by Elevated Procurement Solutions</sup>
 
 						</div>
 					</div>
